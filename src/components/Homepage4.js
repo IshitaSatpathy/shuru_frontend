@@ -15,7 +15,11 @@ import Navbar from "./Navbar";
 import { IconButton } from "@mui/material";
 import { makeStyles } from "@mui/styles";
 import { blueGrey } from "@mui/material/colors";
+import interRegular from '../static/Inter-Regular.ttf';
+import interBold from '../static/Inter-Bold.ttf';
+import interExtraBold from '../static/Inter-ExtraBold.ttf';
 import EastIcon from "@mui/icons-material/East";
+import { createMuiTheme, ThemeProvider } from "@material-ui/core/styles";
 const useStyles = makeStyles((theme) => ({
   circle: {
     backgroundColor: blueGrey[50],
@@ -28,6 +32,16 @@ const useStyles = makeStyles((theme) => ({
     position: "relative",
     top: "9.3rem",
     left: "6rem",
+  },
+  '@font-face': {
+    fontFamily: 'Inter',
+    src: `
+      url(${interRegular}) format('truetype'),
+      url(${interBold}) format('truetype'),
+      url(${interExtraBold}) format('truetype')
+    `,
+    fontWeight: 'normal',
+    fontStyle: 'normal',
   },
   circle1: {
     backgroundColor: blueGrey[50],
@@ -43,47 +57,73 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 function HomepageScreen4() {
+  const theme = createMuiTheme({
+    typography: {
+      caption: {
+        fontSize: "0.75rem",
+      },
+      h5: {
+        fontSize: "calc(25/16*1rem)",
+      },
+      h1: {
+        fontSize: "calc(61.04/16*1rem)",
+      },
+      h2: {
+        fontSize: "calc(48.83/16*1rem)",
+      },
+      h3: {
+        fontSize: "calc(39.06/16*1rem)",
+      },
+      h4: {
+        fontSize: "calc(31.25/16*1rem)",
+      },
+      body1: {
+        fontSize: "calc(16/16*1rem)",
+      },
+    },
+    spacing: (factor) => `${0.8 * factor}rem`,
+  });
   const classes = useStyles();
   return (
     <>
-      <Header style={{ zIndex: 1 }} />
+    <ThemeProvider theme={theme}>
+    
       <Grid
         container
         spacing={1}
         style={{
-          height: "calc(100vh - 8rem)",
-          position: "relative",
-          width: "calc(100%)",
+          justifyContent: "space-between",
+            alignItems: "center",
+            margin: "auto",
+            position: "relative",
+            maxWidth: "83.75rem",
         }}
       >
         <Grid
           item
           style={{
-            width: "100%",
-            marginTop: "2rem",
-            height: "16%",
-            overflowX: "hidden",
-            marginBottom: 0,
+            maxWidth: "100%",
+              marginTop: "4.375rem",
+              padding: 0,
+             
+              marginBottom: 0,
           }}
         >
           <Grid
             item
-            style={{ position: "relative", left: "3.3rem", width: "40%" }}
+            style={{ position: "relative" }}
           >
-            <Typography variant="body1">Why Invest</Typography>
+            <Typography variant="caption" style={{fontFamily:'Inter',fontWeight:500}}>WHY SHURU</Typography>
           </Grid>
           <Grid
-            container
-            justifyContent="space-between"
-            alignItems="center"
-            style={{ marginBottom: "0rem" }}
-          >
-            <Grid item style={{ overflowX: "hidden", width: "40%" }}>
-              <Typography
-                variant="h3"
-                style={{ marginLeft: "3.3rem", fontWeight: "bold" }}
-              >
-                Why Invest ?
+              container
+              justifyContent="space-between"
+              alignItems="center"
+              style={{ marginBottom: "0rem", width: "83.75rem" }}
+            >
+            <Grid item style={{ maxWidth: "39.375rem" }}>
+            <Typography variant="h1"  style={{ fontFamily:'Inter',fontWeight:800,color:'#292D32' }}>
+                Why Shuru ?
               </Typography>
             </Grid>
           </Grid>
@@ -92,94 +132,91 @@ function HomepageScreen4() {
         <Grid
           item
           style={{
-            height: "75%",
-            width: "100%",
+            marginTop:"3.125rem",
+            maxWidth: "83.75rem",
             overflowX: "hidden",
-            marginLeft: "3.2rem",
-            marginRight: "3rem",
+            height:'37.125rem',
+            padding:0,
+            marginBottom:'3.937rem'
           }}
         >
           <Card
-            style={{ height: "100%", borderRadius: "2rem", display: "flex" }}
+            style={{  borderRadius: "1.5rem", display: "flex",height:"100%",boxShadow:'none',backgroundColor:'#FFFFFF' }}
           >
             <div
               style={{
-                width: "50%",
-                height: "84.4%",
+                width: "44.104%",
+                height: "100%",
                 overflow: "hidden",
-                margin: "3rem",
-                borderRadius: "2rem",
+                margin: "auto",
+                
+                borderRadius: "1.5rem",
               }}
             >
               <img
-                src="https://s3-alpha-sig.figma.com/img/59c3/49fb/06801f29bedd8cfba836abe10f9fd54a?Expires=1684108800&Signature=nytU-UD-z4gDIicf6FXXVlt9cK~HIxC6UoP0VrME0-coBQMHxlTkPDltFKOR0mbJnulA5mO8sD4djVUYhN9rmjsW3TU9E34hPwnh~BOntvkKvGm5rzo0MymYHO2KX939L2qI2T6TMFyBzuqe~F~YJuosO784W-WJX8Ry1Q5zCK1i64q5OUThHs7DLfZKI1S-xuBlKL5iWiEv6mC~tgIVhhowxQn3Da7nETluKI7ZdBJu8Q1~cBa67meFlEht-G5SeXKeE9yTGQopiX-OltsitHhE9HU3n3SHQ92UfHo0go5Yq7SAQuGRcx568leoxHrzNxGWxEBOjjN6oZ6ZF01rPg__&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4"
+                src="https://s3-alpha-sig.figma.com/img/59c3/49fb/06801f29bedd8cfba836abe10f9fd54a?Expires=1685923200&Signature=fmRIZYAtuQg9n3jBjZ7gZH2ePhixsGAjQKowYcr00-EziZs51z3DKHDy1xM453QmLutwYAJwMSLcf3O68N8-2i8~U1wIDN7GdAByRPcZprkZMdY9LIg-Okwd44AP6KJ99E6l9MfINPizGKVaPSLf7FjSb4Ex-Gz4HAXdWlbNYTuQcipv41E~mcel2~hkQl18EVUVeJKpkQorlx7ROTidfwC6U58gMRw5DMFuBpK2wKIJeEkLjoi-6JiqKLwXgANCI~9KYzizFJ0sdDsTiFeQhxwBpkUFa0VE0jxdZBBA3IFp~4-J15U~TS~SYWlcnUQFm-B642PGj9Rkg0WsK6JLaQ__&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4"
                 alt="card-image"
-                style={{ width: "100%", height: "100%" }}
+                style={{ width: "94.78%", height: "92.39%",borderRadius: "1.5rem",marginLeft:'1.375rem',marginTop:'1.375rem' }}
               />
             </div>
             <CardContent
               style={{
                 width: "50%",
                 height: "84.4%",
-                padding: "3rem",
-                marginTop: "1rem",
+                padding: "3.5rem",
+               
               }}
             >
               <div>
                 <Typography
                   variant="h4"
-                  style={{ fontWeight: "bold", marginRight: "2rem" }}
+                  style={{ width:'9rem',fontFamily:'Inter',fontWeight:800,color:'#292D32' }}
                   gutterBottom
                 >
-                  Step 1
+                  Point 1
                 </Typography>
                 <Typography
                   variant="body1"
-                  style={{ marginBottom: "2.2rem", marginRight: "10rem" }}
+                  style={{ marginBottom: "2.2rem", marginRight: "10rem",fontFamily:'Inter',fontWeight:400,color:'#727376' }}
                   gutterBottom
                 >
-                  Shuru campaigns make ideas into reality. It’s where creators
-                  share new visions for creative work with the communities that
-                  will come together to fund them.
+                  From an idea to a working prototype, Shuru helps you find your community of supporters along the way. 
                 </Typography>
                 <Typography
                   variant="h4"
-                  style={{ fontWeight: "bold", marginRight: "2rem" }}
+                  style={{ width:'9rem',fontFamily:'Inter',fontWeight:800,color:'#292D32' }}
                   gutterBottom
                 >
-                  Step 2
+                  Point 2
                 </Typography>
                 <Typography
                   variant="body1"
-                  style={{ marginBottom: "2.2rem", marginRight: "10rem" }}
+                  style={{ marginBottom: "2.2rem", marginRight: "10rem",fontFamily:'Inter',fontWeight:400,color:'#727376' }}
                   gutterBottom
                 >
-                  Shuru campaigns make ideas into reality. It’s where creators
-                  share new visions for creative work with the communities that
-                  will come together to fund them.
+                  Investors can connect with creators when they are ready to commit funds.
                 </Typography>
                 <Typography
                   variant="h4"
-                  style={{ fontWeight: "bold" }}
+                  style={{ width:'9rem',fontFamily:'Inter',fontWeight:800,color:'#292D32' }}
                   gutterBottom
                 >
-                  Step 3
+                  Point 3
                 </Typography>
                 <Typography
                   variant="body1"
-                  style={{ marginBottom: "2.2rem", marginRight: "10rem" }}
+                  style={{ marginBottom: "2.2rem", marginRight: "10rem",fontFamily:'Inter',fontWeight:400,color:'#727376' }}
                   gutterBottom
                 >
-                  Shuru campaigns make ideas into reality. It’s where creators
-                  share new visions for creative work with the communities that
-                  will come together to fund them.
+                  An open-source community that uses voting, and other tools to foster conversations, collective thinking and invest in proposals.
                 </Typography>
               </div>
             </CardContent>
           </Card>
         </Grid>
       </Grid>
-      <Navbar />
+      
+      </ThemeProvider>
     </>
   );
 }

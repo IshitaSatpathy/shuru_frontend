@@ -15,116 +15,175 @@ import { IconButton } from "@mui/material";
 import { makeStyles } from "@mui/styles";
 import { blueGrey } from "@mui/material/colors";
 import EastIcon from "@mui/icons-material/East";
+import interRegular from '../static/Inter-Regular.ttf';
+import interBold from '../static/Inter-Bold.ttf';
+import interExtraBold from '../static/Inter-ExtraBold.ttf';
+import { createTheme, ThemeProvider } from "@material-ui/core/styles";
 const useStyles = makeStyles((theme) => ({
   circle: {
     backgroundColor: blueGrey[50],
     borderRadius: "50%",
-    height: 40,
-    width: 40,
+    height: "2.5rem",
+    width: "2.5rem",
     display: "flex",
     justifyContent: "center",
     alignItems: "center",
     position: "relative",
-    top: "9.3rem",
-    left: "6rem",
+   
+  },
+  '@font-face': {
+    fontFamily: 'Inter',
+    src: `
+      url(${interRegular}) format('truetype'),
+      url(${interBold}) format('truetype'),
+      url(${interExtraBold}) format('truetype')
+    `,
+    fontWeight: 'normal',
+    fontStyle: 'normal',
   },
   circle1: {
     backgroundColor: blueGrey[50],
     borderRadius: "50%",
-    height: 40,
-    width: 40,
+    height: "2.5rem",
+    width: "2.5rem",
     display: "flex",
     justifyContent: "center",
     alignItems: "center",
-    position: "relative",
-    top: "9.3rem",
-    left: "32rem",
+    
   },
 }));
 function HomepageScreen() {
+  const theme = createTheme({
+    typography: {
+      caption: {
+        fontSize: "0.75rem",
+      },
+      h5: {
+        fontSize: "calc(25/16*1rem)",
+      },
+      h1: {
+        fontSize: "calc(61.04/16*1rem)",
+      },
+      h2: {
+        fontSize: "calc(48.83/16*1rem)",
+      },
+      h3: {
+        fontSize: "calc(39.06/16*1rem)",
+      },
+      h4: {
+        fontSize: "calc(31.25/16*1rem)",
+      },
+      body1: {
+        fontSize: "calc(16/16*1rem)",
+      },
+    },
+    spacing: (factor) => `${0.8 * factor}rem`,
+  });
   const classes = useStyles();
   return (
     <>
-      <Header style={{ zIndex: 1 }} />
+     <ThemeProvider theme={theme}>
+      
       <Grid
-        container
-        spacing={1}
-        style={{
-          height: "calc(100vh - 8rem)",
-          position: "relative",
-          width: "calc(100%)",
-        }}
-      >
-        <Grid item xs={12} style={{ marginTop: "6rem", overflowX: "hidden" }}>
-          <Grid item style={{ position: "relative", left: "8.3rem" }}>
-            <Typography variant="body1">PROJECTS</Typography>
-          </Grid>
-          <Grid
-            container
-            justifyContent="space-between"
-            alignItems="center"
-            style={{ marginBottom: "0rem" }}
+          container
+          spacing={1}
+          style={{
+            justifyContent: "space-between",
+            alignItems: "center",
+            margin: "auto",
+            position: "relative",
+            maxWidth: "83.75rem",
+          }}
+        >
+        <Grid
+            item
+            style={{
+              maxWidth: "100%",
+              marginTop: "4.375rem",
+              padding: 0,
+              
+              marginBottom: 0,
+            }}
           >
-            <Grid item style={{ overflowX: "hidden" }}>
-              <Typography
-                variant="h2"
-                style={{ marginLeft: "8rem", fontWeight: "bold" }}
-              >
-                Popular Projects
-              </Typography>
+            <Grid item style={{ position: "relative" }}>
+              <Typography variant="caption" style={{fontFamily:'Inter',fontWeight:500,color:'#292D32'}}>PROJECTS</Typography>
             </Grid>
-            <Grid item style={{ overflowX: "hidden" }}>
-              <Typography
-                variant="h5"
-                align="right"
-                color="primary"
-                style={{
-                  overflowX: "hidden",
-                  display: "block",
-                  marginRight: "9rem",
-                  textDecoration: "underline",
-                  color: "black",
-                }}
-              >
-                View all projects
-              </Typography>
-            </Grid>
+            <Grid
+              container
+              justifyContent="space-between"
+              alignItems="center"
+              style={{ marginBottom: "0rem", width: "83.75rem" }}
+            >
+              <Grid item style={{ maxWidth: "39.375rem" }}>
+                <Typography variant="h1"  style={{ fontFamily:'Inter',fontWeight:800,color:'#292D32' }}>
+                  Popular projects
+                </Typography>
+              </Grid>
+             
+            
+           
+           
+            <Grid item align="right" >
+                
+
+                  <Typography
+                    variant="h5"
+                    align="right"
+                   
+                    style={{
+                      fontWeight:500,
+                      display: "block",
+                      
+                      fontFamily:'Inter',
+                      
+                      color:'#292D32'
+                    }}
+                  >
+                   <u>View all projects</u>
+                  </Typography>
+              </Grid>
+              </Grid>
           </Grid>
-        </Grid>
         <Grid
           item
-          xs={5}
+          
           style={{
             display: "flex",
-            marginLeft: "8rem",
+            marginTop:'3.125rem',
             flexDirection: "column",
-            height: "65%",
-            marginRight: "2rem",
-            overflowX: "hidden",
+            width:'48.88059701%',
+            marginRight: "1.875rem",
+            padding:0,
+            marginBottom:'3.125rem'
           }}
         >
           <Card
             style={{
               flexGrow: 1,
-              borderRadius: "2rem",
-              backgroundImage: `url(https://s3-alpha-sig.figma.com/img/fd91/c8c4/12dfe660a4361eea5b971d6ecf578bba?Expires=1683504000&Signature=AgKzM1me7c2dHWzs5wNgs1JuRIwpiQkv3SmWHTn8pcataZnAwRwUbZknRkgyBxGVxe7-KdTjb3x3zaHayJTok2zII~QdE5ja6dElVfEMWYImZlafpKxsVB95rKxkdBaVv7Z0u3YipJ5l-dU0mLy8LRE7OUutI4zh~hnaMtpbw0Ve9GPyHPk2MsmChzYNMAF376k3HgxvoMfg5dgUA0wAl4vM0iAGXwSJBNp6NVATbmoZzR5A8n48Hc2ZUyN6nHZaa4nz3atbVksGXw7pFx9IrmLFSbBF2Rd-6tSRM79mpPgwTYtHborqxT2bWOIJWMsFS5oFM0wqND7fvIWLRdC6TA__&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4)`,
+              borderRadius: "1.5rem",
+              backgroundImage: `url(https://s3-alpha-sig.figma.com/img/fd91/c8c4/12dfe660a4361eea5b971d6ecf578bba?Expires=1686528000&Signature=LiaEJdlKBlajuYASgqwnT9knfv1lik98uSuYU2dNgNXcZwh8Ica7oShs-YEK-C8RKb0X-i7IQmqpvp-aDDn4tQvAQoy5ZSHC5New-8q01EupaXSmOyEQbYg~2kdo~K4NChGcrArS4~9kUn07KxWCQ66U62bwG8lc7zkueKZSKMBNSc2qdBLtGZ0Vjc353kE4cWx7rW1osoG2vxNqnUbu9NWyHe8YkiJzjVclRnbEUIV1kOWgHLUtwiqEpO580YUBivS9TScOkt9bJhC~3P2xBlYGSV~IWlThedurHXCvLUuIF1chaF4ecNdRvT6qcELC10Udy4qNy-Qu2xxEhSYUPQ__&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4)`,
               backgroundSize: "cover",
               backgroundPosition: "center",
+              boxShadow:'none'
             }}
           >
-            <CardContent style={{ marginLeft: "1rem", marginTop: "1rem" }}>
+            <CardContent style={{ width:'100%',padding:0 }}>
               <Typography
-                variant="h3"
+                variant="h2"
                 gutterBottom
-                style={{ color: "white", fontWeight: "bold" }}
+                style={{ color: "white", fontWeight: 800,fontFamily:'Inter',marginLeft:'1.875rem',marginTop:'2.5rem'}}
               >
                 Hero Software
               </Typography>
               <Typography
+              variant="body1"
                 style={{
-                  fontFamily: "PP Neutra Montreal",
+                  fontFamily: "Inter",
                   color: "white",
-                  fontSize: "1.3rem",
+                  marginTop:'1rem',
+                  marginLeft:'1.875rem',
+                  fontWeight:400,
+                  maxWidth:'93.38167%',
                 }}
               >
                 Online platform that helps couples get divorced without the
@@ -137,52 +196,57 @@ function HomepageScreen() {
                   backgroundColor: "rgba(255, 255, 255, 0.9)",
                   backdropFilter: "blur(5dp)",
                   opacity: 0.9,
-                  borderRadius: "1rem",
+                  borderRadius: ".75rem",
                   color: "rgba(41, 45, 50, 1)",
-                  marginTop: "1rem",
+                  marginTop: "1.50626rem",
+                  marginLeft:'1.875rem',
                 }}
               >
                 <Typography
+                variant='caption'
                   style={{
                     textTransform: "capitalize",
-                    fontWeight: 500,
-                    fontFamily: "PP Neutra Montreal",
+                    fontWeight: 400,
+                    fontFamily: "Inter",
                   }}
                 >
                   Pledge
                 </Typography>
                 &nbsp;
                 <Typography
+                variant='caption'
                   style={{
-                    fontWeight: "bold",
-                    fontFamily: "PP Neutra Montreux",
+                    
+                    fontWeight: 800,
+                    fontFamily: "Inter",
                   }}
                 >
                   {" "}
                   US$20,045
                 </Typography>
               </Button>
+              <Grid container style={{marginLeft:'1.875rem',marginTop:'18rem',display:'flex',flexDirection:'row',marginBottom:'2.5rem' }}>
               <Typography
                 style={{
-                  marginTop: "1rem",
-                  position: "relative",
-                  top: "12rem",
-                  fontWeight: "bold",
+                  
+                  marginTop:'0.9225rem',
+                  fontWeight: 800,
                   color: "#FFFFFF",
-                  fontFamily: "PP Neutra Montreux",
-                  fontSize: "1.2rem",
+                  fontFamily: "Inter",
+                  
                 }}
               >
                 Read more
               </Typography>
               <IconButton
                 aria-label="east"
-                styles={{ position: "absolute", bottom: 0, right: 0 }}
+                styles={{marginLeft:'.5rem'}}
               >
                 <div className={classes.circle}>
                   <EastIcon color="background: #292D32;" />
                 </div>
               </IconButton>
+              </Grid>
             </CardContent>
           </Card>
         </Grid>
@@ -190,86 +254,80 @@ function HomepageScreen() {
           item
           container
           direction="column"
-          xs={5}
-          style={{ display: "flex", height: "68%", overflowX: "hidden" }}
+          
+          style={{ display: "flex",width:'48.88059701%',marginTop:'3.125rem',padding:0,marginBottom:'3.125rem',justifyContent:"space-between"}}
         >
           <Grid
             item
-            style={{ flexGrow: 1, height: "50%", overflowX: "hidden" }}
+            style={{ flexGrow: 1,width:'100%'}}
           >
             <Card
               style={{
-                height: "90%",
-                borderRadius: "2rem",
-                backgroundImage: `url(https://s3-alpha-sig.figma.com/img/0411/d51c/ba699a29d4e6a814bbbc5e74cd825f86?Expires=1683504000&Signature=CDFIuu6OqCGi5zOlsFDw4LyxoxYurnRn4IOCJG77OPJkt5Y3mZvx2Ph-9Y4o6CSQQJPXvGzFDdh3dxB0ig0Ogutq-DfZplPOfHPpoTFK1zbwilQABEM~OHmYykSUIUvCIrnBTZt4EvV2d0nFwpCo21-VFJkLjpCD1lsiVGAXnBFbjhl4zP9sQSYnm5n~2M~bI5YRFuoef-mpgZdQMIu-RR8ypyvgpZXSFkZQba8git8UbA6l1kdASNaJMGwlHISZpX4MAcbaOOKPWvMJWJom0yOltT1Qcb-QehrGqIMRafWTzkVBk2psWAdGvXXCqvgqp7l0CY4gUFG1dRNCWeFRwg__&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4)`,
+                width:'100%',
+                borderRadius: "1.5rem",
+                backgroundImage: `url(https://s3-alpha-sig.figma.com/img/0411/d51c/ba699a29d4e6a814bbbc5e74cd825f86?Expires=1686528000&Signature=TGEF0BRkvq8gboKAQRG~2YuD~L5z5vox4jwwmvRNUxT0480Q6HtvaLixgu-eZWGEFkotM0wHOHaG-bNKv4ZvrOtlDxNkAJEtCvrgfz4LiQJTkDybUKx-sdEaaFGMk~E1zmlFJX~RrJrf8nUBlUXeaDly9wLCU~ELInvTRdcI9XBR0UixuNEFPIDncOVvzf9APLJOX-BwvTXXhElLnAYhzUPVc1MAVa~mD6O1QU0ElJL720ezdmQfdvKur29E~2ebg6-fqfHdoWOxrwdCuJ18GZMVyChpenSWMM7-4g9FDWRjn0--UT3O-hbIHbPo1sqhKh8yodpVG7Fn5yxR7u44zA__&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4)`,
                 backgroundSize: "cover",
                 backgroundPosition: "center",
+                boxShadow:'none'
               }}
             >
-              <CardContent style={{ position: "relative", height: "90%" }}>
-                <div
-                  style={{
-                    position: "absolute",
-                    top: 20,
-                    left: 20,
-                    width: "50%",
-                    height: "65%",
-                    overflow: "hidden",
-                  }}
-                >
+              <CardContent style={{ width:'100%',padding:0 }}>
+                
                   <Typography
-                    gutterBottom
+                    
+                    variant="h2"
                     style={{
                       color: "white",
-                      fontWeight: "bold",
-                      textOverflow: "ellipsis",
-                      wordWrap: "break-word",
-                      hyphens: "auto",
-                      width: "100%",
-                      height: "100%",
-                      fontFamily: "PP Neutra Montreal",
-                      fontSize: `calc(1.2vw + 1.1vh + 0.7vmin)`,
+                      fontWeight: 800,
+                  
+                      maxWidth:'21rem',
+                      fontFamily: "Inter",
+                      marginLeft:'1.875rem',
+                      marginTop:'2.5rem'
 
-                      display: "inline-block",
+                      
                     }}
                   >
                     The Art of Mark Schultz: Carbon 5
                   </Typography>
-                </div>
+               
 
-                <Button
+                  <Button
+                style={{
+                  backgroundColor: "rgba(255, 255, 255, 0.9)",
+                  backdropFilter: "blur(5dp)",
+                  opacity: 0.9,
+                  borderRadius: ".75rem",
+                  color: "rgba(41, 45, 50, 1)",
+                  marginTop: "1.50626rem",
+                  marginLeft:'1.875rem',
+                  marginBottom:'1.675rem'
+                }}
+              >
+                <Typography
+                variant='caption'
                   style={{
-                    backgroundColor: "rgba(255, 255, 255, 0.9)",
-                    backdropFilter: "blur(5dp)",
-                    opacity: 0.9,
-                    borderRadius: "1rem",
-                    color: "rgba(41, 45, 50, 1)",
-                    marginTop: "1rem",
-                    position: "relative",
-                    top: "9rem",
+                    textTransform: "capitalize",
+                    fontWeight: 400,
+                    fontFamily: "Inter",
                   }}
                 >
-                  <Typography
-                    style={{
-                      textTransform: "capitalize",
-                      fontWeight: 500,
-                      fontFamily: "PP Neutra Montreal",
-                    }}
-                  >
-                    Pledge
-                  </Typography>
-                  &nbsp;
-                  <Typography
-                    style={{
-                      fontWeight: "bold",
-                      fontFamily: "PP Neutra Montreux",
-                    }}
-                  >
-                    {" "}
-                    US$20,045
-                  </Typography>
-                </Button>
-                <IconButton aria-label="east">
+                  Pledge
+                </Typography>
+                &nbsp;
+                <Typography
+                variant='caption'
+                  style={{
+                    
+                    fontWeight: 800,
+                    fontFamily: "Inter",
+                  }}
+                >
+                  {" "}
+                  US$20,045
+                </Typography>
+              </Button>
+                <IconButton aria-label="east" style={{marginLeft:'25.05rem'}}>
                   <div className={classes.circle1}>
                     <EastIcon color="background: #292D32;" />
                   </div>
@@ -279,84 +337,75 @@ function HomepageScreen() {
           </Grid>
           <Grid
             item
-            style={{ flexGrow: 1, height: "50%", overflowX: "hidden" }}
+            style={{ flexGrow: 1,width:'100%',marginTop:'1.675rem'}}
           >
             <Card
               style={{
-                height: "90%",
-                borderRadius: "2rem",
-                backgroundImage: `url(https://s3-alpha-sig.figma.com/img/f801/a43b/c8db8db49bb6eb9b3e9b72bf0cede889?Expires=1683504000&Signature=hzP5XF8gDWdonMXeaC~BwLYsWZU~RiTIM4xJw3WxFCmj9MeG4vHn-Vs-quzqSKPb5fhYvB-tToSeQ9xQZpBIU4y4jmWK3NowOJMJ2xh10vBBzUTBZcGafR7BaJ3O5n8DCcRVmmeYKwlDTRGQgoIaNXfmE3xHZvaip-UPz-yc2yv203UeQFn2bfXIafs6jZJag6F3tAz6zgzUHnF3T7AdQwMHY3f2HxoRI-NJlTC~vWwXMxfv1lDEpWDXTZlqCCU-MI3fQRjUzqDQ4e6FtQzzv~ZeUy7tRswPu8BdqaeieazRsM4BRlCQAsaUC3bAkIY2WO3--oHmkd74AsS9-tGHkA__&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4)`,
+                width:'100%',
+                borderRadius: "1.5rem",
+                backgroundImage: `url(https://s3-alpha-sig.figma.com/img/f801/a43b/c8db8db49bb6eb9b3e9b72bf0cede889?Expires=1686528000&Signature=Xyd6g5MvxZiZbBGz1KhCj3VCGiYLMJfKMiIQ5xne7~~9VIFFWVui5rbymJ~px92Op0Okh132SnQ2nMKjqY8Sr6wzMaV5XlaF9HYGycQCXsdb3DIxBut95k-QNnarfByO-O3HBjUA8p1~C3iqiQK~zOr7RfPku7Oltzjy739ZRTewTvWgRmVOlkz0o03u2Ccz1-rm5mirUHAUVaPi67ajIpR86nPhDL35A9BHvAvhMxEFuyyac~IMvpAlxzIRTrSOvhfh9xF3P0H~EZqf8p36xQAyIxt07SkEDTHg9jeFFS4pkXxzwI5B-Du6ySWwEnRYt6NUkvM7Ott0CiunbVgDzw__&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4)`,
                 backgroundSize: "cover",
                 backgroundPosition: "center",
+                boxShadow:'none'
               }}
             >
-              <CardContent style={{ position: "relative", height: "90%" }}>
-                <div
-                  style={{
-                    position: "absolute",
-                    top: 20,
-                    left: 20,
-                    width: "50%",
-                    height: "65%",
-                    overflow: "hidden",
-                  }}
-                >
+              <CardContent style={{ width:'100%',padding:0 }}>
+                
                   <Typography
-                    gutterBottom
+                    
+                    variant="h2"
                     style={{
                       color: "white",
-                      fontWeight: "bold",
-                      textOverflow: "ellipsis",
-                      wordWrap: "break-word",
-                      hyphens: "auto",
-                      width: "100%",
-                      height: "100%",
-                      fontFamily: "PP Neutra Montreal",
-                      fontSize: `calc(1.2vw + 1.1vh + 0.7vmin)`,
+                      fontWeight: 800,
+                  
+                      maxWidth:'21rem',
+                      fontFamily: "Inter",
+                      marginLeft:'1.875rem',
+                      marginTop:'2.5rem'
 
-                      display: "inline-block",
+                      
                     }}
                   >
                     Multiverse – The art of Aleksi Briclot
                   </Typography>
-                </div>
+               
 
-                <Button
+                  <Button
+                style={{
+                  backgroundColor: "rgba(255, 255, 255, 0.9)",
+                  backdropFilter: "blur(5dp)",
+                  opacity: 0.9,
+                  borderRadius: ".75rem",
+                  color: "rgba(41, 45, 50, 1)",
+                  marginTop: "1.50626rem",
+                  marginLeft:'1.875rem',
+                  marginBottom:'1.675rem'
+                }}
+              >
+                <Typography
+                variant='caption'
                   style={{
-                    backgroundColor: "rgba(255, 255, 255, 0.9)",
-                    backdropFilter: "blur(5px)",
-                    opacity: 0.9,
-                    borderRadius: "1rem",
-                    color: "rgba(41, 45, 50, 1)",
-                    marginTop: "1rem",
-                    position: "relative",
-                    top: "9rem",
+                    textTransform: "capitalize",
+                    fontWeight: 400,
+                    fontFamily: "Inter",
                   }}
                 >
-                  <Typography
-                    style={{
-                      textTransform: "capitalize",
-                      fontWeight: 500,
-                      fontFamily: "PP Neutra Montreal",
-                    }}
-                  >
-                    Pledge
-                  </Typography>
-                  &nbsp;
-                  <Typography
-                    style={{
-                      fontWeight: "bold",
-                      fontFamily: "PP Neutra Montreux",
-                    }}
-                  >
-                    {" "}
-                    US$20,045
-                  </Typography>
-                </Button>
-                <IconButton
-                  aria-label="east"
-                  styles={{ position: "absolute", bottom: 0, right: 0 }}
+                  Pledge
+                </Typography>
+                &nbsp;
+                <Typography
+                variant='caption'
+                  style={{
+                    
+                    fontWeight: 800,
+                    fontFamily: "Inter",
+                  }}
                 >
+                  {" "}
+                  US$20,045
+                </Typography>
+              </Button>
+                <IconButton aria-label="east" style={{marginLeft:'25.05rem'}}>
                   <div className={classes.circle1}>
                     <EastIcon color="background: #292D32;" />
                   </div>
@@ -366,7 +415,8 @@ function HomepageScreen() {
           </Grid>
         </Grid>
       </Grid>
-      <Navbar />
+     
+      </ThemeProvider>
     </>
   );
 }

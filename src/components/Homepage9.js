@@ -17,8 +17,10 @@ import Navbar from "./Navbar";
 import { IconButton } from "@mui/material";
 import { makeStyles } from "@mui/styles";
 import { blueGrey } from "@mui/material/colors";
-import EastIcon from "@mui/icons-material/East";
-import ChevronLeftIcon from "@mui/icons-material/ChevronLeft";
+import interRegular from "../static/Inter-Regular.ttf";
+import interBold from "../static/Inter-Bold.ttf";
+import interExtraBold from "../static/Inter-ExtraBold.ttf";
+import { createTheme, ThemeProvider } from "@material-ui/core/styles";
 const useStyles = makeStyles((theme) => ({
   circle: {
     backgroundColor: blueGrey[50],
@@ -29,8 +31,16 @@ const useStyles = makeStyles((theme) => ({
     justifyContent: "center",
     alignItems: "center",
     position: "relative",
-    top: "9.3rem",
-    left: "6rem",
+  },
+  "@font-face": {
+    fontFamily: "Inter",
+    src: `
+      url(${interRegular}) format('truetype'),
+      url(${interBold}) format('truetype'),
+      url(${interExtraBold}) format('truetype')
+    `,
+    fontWeight: "normal",
+    fontStyle: "normal",
   },
   circle1: {
     backgroundColor: blueGrey[50],
@@ -46,118 +56,135 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 function HomepageScreen9() {
+  const theme = createTheme({
+    typography: {
+      caption: {
+        fontSize: "0.75rem",
+      },
+      h5: {
+        fontSize: "calc(25/16*1rem)",
+      },
+      h1: {
+        fontSize: "calc(61.04/16*1rem)",
+      },
+      h2: {
+        fontSize: "calc(48.83/16*1rem)",
+      },
+      h3: {
+        fontSize: "calc(39.06/16*1rem)",
+      },
+      h4: {
+        fontSize: "calc(31.25/16*1rem)",
+      },
+      body1: {
+        fontSize: "calc(16/16*1rem)",
+      },
+    },
+    spacing: (factor) => `${0.8 * factor}rem`,
+  });
   const classes = useStyles();
   return (
     <>
-      <Header style={{ zIndex: 1 }} />
+     <ThemeProvider theme={theme}>
+    
       <Grid
-        container
-        spacing={2}
-        style={{
-          height: "calc(100vh - 8rem)",
-          position: "relative",
-          width: "calc(100%)",
-          flexDirection: "column",
-        }}
-      >
-        <Grid
           container
           spacing={1}
           style={{
-            height: "100%",
+            justifyContent: "space-between",
+            
+            margin: "auto",
             position: "relative",
-            width: "50%",
+            maxWidth: "83.75rem",
+            marginBottom:'3.325rem'
           }}
         >
-          <Grid
+        <Grid
             item
             style={{
-              width: "100%",
-              marginTop: "2rem",
-              height: "27%",
+              maxWidth: "48.88%",
+              marginTop: "4.375rem",
+              padding: 0,
 
               marginBottom: 0,
+              
             }}
           >
-            <Grid
-              item
-              style={{ position: "relative", left: "3.3rem", width: "100%" }}
-            >
-              <Typography variant="body1">About</Typography>
+            <Grid item style={{ position: "relative" }}>
+              <Typography
+                variant="caption"
+                style={{ fontFamily: "Inter", fontWeight: 500 }}
+              >
+                ABOUT
+              </Typography>
             </Grid>
-
             <Grid
               container
               justifyContent="space-between"
-              alignItems="center"
-              style={{ marginBottom: "0rem" }}
+              
+              style={{ marginBottom: "0rem", width: "100%", padding: 0 }}
             >
-              <Grid item style={{ overflowX: "hidden", width: "100%" }}>
+              <Grid item style={{ maxWidth: "36.625rem", padding: 0 ,marginTop:'.6rem'}}>
                 <Typography
                   variant="h1"
-                  style={{ marginLeft: "3.3rem", fontWeight: "bold" }}
+                  style={{
+                    fontFamily: "Inter",
+                    fontWeight: 800,
+                    color: "#292D32",
+                  }}
                 >
                   Back the project, take the ride
                 </Typography>
-                <article
+              </Grid>
+              <Grid item style={{ maxWidth: "39rem", padding: 0,marginTop:'1.5rem' }}>
+                <Typography
+                  variant="body1"
                   style={{
-                    marginLeft: "3.3rem",
-                    marginTop: "1rem",
-                    marginRight: "1rem",
-                    width: "86%",
+                    fontFamily: "Inter",
+                    fontWeight: 400,
+                    color: "#292D32",
                   }}
                 >
-                  <Typography
-                    variant="body"
-                    style={{ fontFamily: "Inter", fontStyle: "regular" }}
-                  >
-                    Shuru campaigns make ideas into reality. It’s where creators
-                    share new visions for creative work with the communities
-                    that will come together to fund them.<br></br>
-                    <br></br>
-                    Some of these creators, like Critical Role, TLC, and The
-                    Smithsonian Institution already had huge fanbases. But many
-                    projects have been as small-scale as a limited run of silent
-                    meditation vinyls or as up-and-coming as early versions of
-                    Issa Rae's Insecure and Phoebe Waller-Bridge’s Fleabag.
-                  </Typography>
-                </article>
-                <section style={{ marginLeft: "3.3rem", marginTop: "3.8rem" }}>
-                  <Button
-                    color="inherit"
-                    style={{ padding: 0 }}
-                    classes={{ root: classes.link }}
-                    href="#"
-                  >
-                    <Typography
-                      variant="h6"
-                      style={{ textTransform: "capitalize" }}
-                    >
-                      {" "}
-                      <u> Learn about us</u>
-                    </Typography>
-                  </Button>
-                </section>
+                  Shuru, in Sanskrit means <b>the start</b> ,<b>to start</b> or <b>the beginning.</b><br></br><br></br>
+
+At Shuru we believe in getting started with just an idea. We approach this with a unique perspective where design fiction as an imagination framework, and technology as a medium, come together. We create a playground for creative expression and experiments where innovation and culture can evolve.<br></br><br></br>
+
+As a community, we hope to be the starting point for creators and investors to build upon ideas they’re passionate about. 
+
+                </Typography>
+              </Grid>
+              <Grid item style={{ maxWidth: "39rem", padding: 0,marginTop:'3.875rem' }}>
+                <Typography
+                  variant="h5"
+                  style={{
+                    fontFamily: "Inter",
+                    fontWeight: 500,
+                    color: "#292D32",
+                  }}
+                >
+                  <u>Learn about us </u>
+
+                </Typography>
               </Grid>
             </Grid>
           </Grid>
-        </Grid>
         <Grid
           container
           style={{
-            width: "47%",
-            height: "90%",
-            marginTop: "3rem",
-            marginRight: "2rem",
+            width: "48.88%",
+            height: "40.0625rem",
+            marginTop: "4.175rem",
+            
           }}
         >
           <Card
             style={{
               height: "100%",
               width: "100%",
-              borderRadius: "2rem",
+              borderRadius: "1.5rem",
               display: "flex",
               backgroundColor: "white",
+              boxShadow:'none'
             }}
           >
             <CardContent
@@ -167,7 +194,7 @@ function HomepageScreen9() {
                 backgroundColor: "white",
               }}
             >
-              <Typography
+              {/* <Typography
                 variant="h2"
                 style={{
                   marginLeft: "2.1rem",
@@ -515,12 +542,13 @@ function HomepageScreen9() {
                     </Grid>
                   </Grid>
                 </Grid>
-              </Grid>
+              </Grid> */}
             </CardContent>
           </Card>
         </Grid>
       </Grid>
-      <Navbar />
+
+      </ThemeProvider>
     </>
   );
 }

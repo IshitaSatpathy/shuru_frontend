@@ -13,6 +13,14 @@ code {
     monospace;
 }
 html{
-  font-size: calc(1.11vw);
+  
+  --base-font-size:calc(1.11vw);
+  font-size: var(--base-font-size);
 }
 
+:root {
+   /* Set your initial base font size here */
+   
+   --base-font-size:calc(1.11vw);
+   font-size: var(--base-font-size);
+}

@@ -1,4 +1,7 @@
 import React from "react";
+import interRegular from '../static/Inter-Regular.ttf';
+import interBold from '../static/Inter-Bold.ttf';
+import interExtraBold from '../static/Inter-ExtraBold.ttf';
 import {
   AppBar,
   Button,
@@ -16,7 +19,7 @@ import { IconButton } from "@mui/material";
 import { makeStyles } from "@mui/styles";
 import { blueGrey } from "@mui/material/colors";
 import EastIcon from "@mui/icons-material/East";
-import { createMuiTheme, ThemeProvider } from "@material-ui/core/styles";
+import { createTheme, ThemeProvider } from "@material-ui/core/styles";
 const useStyles = makeStyles((theme) => ({
   circle: {
     backgroundColor: blueGrey[50],
@@ -29,6 +32,16 @@ const useStyles = makeStyles((theme) => ({
     position: "relative",
     top: "9.3rem",
     left: "6rem",
+  },
+  '@font-face': {
+    fontFamily: 'Inter',
+    src: `
+      url(${interRegular}) format('truetype'),
+      url(${interBold}) format('truetype'),
+      url(${interExtraBold}) format('truetype')
+    `,
+    fontWeight: 'normal',
+    fontStyle: 'normal',
   },
   circle1: {
     backgroundColor: blueGrey[50],
@@ -44,10 +57,10 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 function HomepageScreen2() {
-  const theme = createMuiTheme({
+  const theme = createTheme({
     typography: {
       caption: {
-        fontSize: "calc(12.80/16*1rem)",
+        fontSize: "0.75rem",
       },
       h5: {
         fontSize: "calc(25/16*1rem)",
@@ -95,9 +108,9 @@ function HomepageScreen2() {
 
   const classes = useStyles();
   return (
-    <>
+    <div className='container1'>
       <ThemeProvider theme={theme}>
-        <Header style={{ zIndex: 1 }} />
+      
         <Grid
           container
           spacing={1}
@@ -120,7 +133,7 @@ function HomepageScreen2() {
             }}
           >
             <Grid item style={{ position: "relative" }}>
-              <Typography variant="caption">Overview</Typography>
+              <Typography variant="caption" style={{fontFamily:'Inter',fontWeight:500,color:'#292D32'}}>OVERVIEW</Typography>
             </Grid>
             <Grid
               container
@@ -128,35 +141,14 @@ function HomepageScreen2() {
               alignItems="center"
               style={{ marginBottom: "0rem", width: "83.75rem" }}
             >
-              <Grid item style={{ overflowX: "hidden", maxWidth: "39.375rem" }}>
-                <Typography variant="h1" style={{ fontWeight: 910 }}>
+              <Grid item style={{ maxWidth: "39.375rem" }}>
+                <Typography variant="h1"  style={{ fontFamily:'Inter',fontWeight:800,color:'#292D32' }}>
                   Bring a creative project to life.
                 </Typography>
               </Grid>
-              <Grid item align="right" style={{ overflowX: "hidden" }}>
-                <Grid container spacing="">
-                  {creators.map((creator) => (
-                    <Grid item key={creator.name}>
-                      <Avatar alt={creator.name} src={creator.imageUrl} />
-                    </Grid>
-                  ))}
-                  <Typography
-                    variant="body1"
-                    align="right"
-                    color="primary"
-                    style={{
-                      overflowX: "hidden",
-                      display: "block",
-
-                      textDecoration: "underline",
-                      color: "black",
-                    }}
-                  >
-                    +1342 creators
-                  </Typography>
-                </Grid>
-              </Grid>
+             
             </Grid>
+            <Grid container justifyContent="space-between" alignItems="center" style={{width:'83.75rem'}}>
             <Grid
               item
               style={{
@@ -165,12 +157,38 @@ function HomepageScreen2() {
                 marginTop: "1rem",
               }}
             >
-              <Typography variant="body1">
+              <Typography variant="body1" style={{fontFamily:'Inter',fontWeight:400,color:'#292D32'}}>
                 Shuru campaigns make ideas into reality. It’s where creators
                 share new visions for creative work with the communities that
                 will come together to fund them.
               </Typography>
+              
             </Grid>
+            <Grid item align="right" style={{ overflowX: "hidden" }}>
+                <Grid container spacing="">
+                {creators.map((creator, index) => (
+    <Grid item key={creator.name} style={{ marginLeft: index !== 0 ? '-.85rem' : 0 }}>
+      <Avatar style={{ border: ".2rem solid #EDEEF1", maxWidth: '2.5rem', maxHeight: '2.5rem', position: 'relative', zIndex: creators.length - index }} alt={creator.name} src={creator.imageUrl} />
+    </Grid>
+  ))}
+                  <Typography
+                    variant="body1"
+                    align="right"
+                    color="primary"
+                    style={{
+                      overflowX: "hidden",
+                      display: "block",
+                      marginTop:'.4rem',
+                      fontFamily:'Inter',
+                      marginLeft:'.7rem',
+                      color:'#292D32'
+                    }}
+                  >
+                   <b>+1342 </b> creators
+                  </Typography>
+                </Grid>
+              </Grid>
+              </Grid>
           </Grid>
           <Grid
             item
@@ -184,14 +202,15 @@ function HomepageScreen2() {
               overflowX: "hidden",
 
               padding: 0,
-              marginTop: "4.375rem",
+              marginTop: "4.175rem",
             }}
           >
             <Card
               style={{
                 flexGrow: 1,
-                borderRadius: "2rem",
+                borderRadius: "1.5rem",
                 backgroundColor: "#408FF7",
+                boxShadow:'none'
               }}
             >
               <CardContent style={{ marginLeft: "3.6875rem", marginTop: "3.2875rem",padding:0 }}>
@@ -199,7 +218,7 @@ function HomepageScreen2() {
                   variant="h2"
                   style={{
                     color: "white",
-                    fontWeight: "bold",marginBottom:'0.4rem'
+                    fontWeight: 800,marginBottom:'0.4rem',fontFamily:'Inter'
                     
                   }}
                 >
@@ -208,7 +227,7 @@ function HomepageScreen2() {
                 <Typography
                   variant="h5"
                   style={{
-                    color: "white",
+                    color: "white",fontFamily:'Inter',fontWeight:400
                     
                    
                   }}
@@ -229,7 +248,7 @@ function HomepageScreen2() {
               overflowX: "hidden",
               padding: 0,
               justifyContent: "space-between",
-              marginTop: "4.375rem",
+              marginTop: "4.175rem",
             }}
           >
             <Grid
@@ -243,8 +262,9 @@ function HomepageScreen2() {
               <Card
                 style={{
                   height: "100%",
-                  borderRadius: "2rem",
+                  borderRadius: "1.5rem",
                   backgroundColor: "#D2EC4C",
+                  boxShadow:'none'
                 }}
               >
                  <CardContent style={{ marginLeft: "3.6875rem", marginTop: "3.2875rem",padding:0 }}>
@@ -252,7 +272,7 @@ function HomepageScreen2() {
                   variant="h2"
                   style={{
                     color: "black",
-                    fontWeight: "bold",marginBottom:'0.4rem'
+                    fontWeight: 800,marginBottom:'0.4rem',fontFamily:'Inter',color:'#292D32'
                     
                   }}
                 >
@@ -261,7 +281,7 @@ function HomepageScreen2() {
                 <Typography
                   variant="h5"
                   style={{
-                    color: "black",
+                    color: "black",fontFamily:'Inter',fontWeight:400,color:'#292D32'
                     
                    
                   }}
@@ -282,8 +302,9 @@ function HomepageScreen2() {
               <Card
                 style={{
                   height: "100%",
-                  borderRadius: "2rem",
+                  borderRadius: "1.5rem",
                   backgroundColor: "#57BF43",
+                  boxShadow:'none'
                 }}
               >
                  <CardContent style={{ marginLeft: "3.6875rem", marginTop: "3.2875rem",padding:0 }}>
@@ -291,7 +312,7 @@ function HomepageScreen2() {
                   variant="h2"
                   style={{
                     color: "white",
-                    fontWeight: "bold",marginBottom:'0.4rem'
+                    fontWeight: 800,marginBottom:'0.4rem',fontFamily:'Inter'
                     
                   }}
                 >
@@ -300,7 +321,7 @@ function HomepageScreen2() {
                 <Typography
                   variant="h5"
                   style={{
-                    color: "white",
+                    color: "white",fontFamily:'Inter',fontWeight:400
                     
                    
                   }}
@@ -315,7 +336,7 @@ function HomepageScreen2() {
           <div
             style={{
               textAlign: "center",
-              marginTop: "4.375rem",
+              marginTop: "4.175rem",
               marginBottom: "7rem",
             }}
           >
@@ -325,15 +346,15 @@ function HomepageScreen2() {
                 flex: 1,
                 width: "12.125rem",
                 textTransform: "capitalize",
-                borderRadius: "1rem",
+                borderRadius: "0.75rem",
                 color: "white",
                 fontWeight: "bold",
-                backgroundColor: "black",
+                backgroundColor: "#292D32",
 
                 marginRight: "2rem",
               }}
             >
-              <Typography variant="body1" style={{ fontWeight: "bold" }}>
+              <Typography variant="body1" style={{ fontWeight: 800,fontFamily:'Inter',marginTop:'.2rem' ,marginBottom:'.2rem'}}>
                 {" "}
                 Explore Projects{" "}
               </Typography>{" "}
@@ -342,20 +363,20 @@ function HomepageScreen2() {
             </Button>
             <Button
               color="inherit"
-              style={{ textTransform: "capitalize", fontWeight: "bold" }}
+              style={{ textTransform: "none", fontWeight: "bold" }}
               classes={{ root: classes.link }}
               href="#"
             >
-              <Typography variant="body1" style={{ fontWeight: "bold" }}>
+              <Typography variant="body1" style={{ fontWeight: 800,fontFamily:'Inter',color:'#292D32' }}>
                 {" "}
-                <u> Start a Project</u>
+                <u> Start a project</u>
               </Typography>
             </Button>
           </div>
         </Grid>
-        <Navbar />
+       
       </ThemeProvider>
-    </>
+    </div>
   );
 }
 

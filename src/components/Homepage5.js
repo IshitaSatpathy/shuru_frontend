@@ -1,4 +1,5 @@
 import React from "react";
+import { useEffect, useState } from "react";
 import {
   AppBar,
   Button,
@@ -16,7 +17,12 @@ import Navbar from "./Navbar";
 import { IconButton } from "@mui/material";
 import { makeStyles } from "@mui/styles";
 import { blueGrey } from "@mui/material/colors";
+import { Link } from "react-router-dom";
+import interRegular from "../static/Inter-Regular.ttf";
+import interBold from "../static/Inter-Bold.ttf";
+import interExtraBold from "../static/Inter-ExtraBold.ttf";
 import EastIcon from "@mui/icons-material/East";
+import { createTheme, ThemeProvider } from "@material-ui/core/styles";
 const useStyles = makeStyles((theme) => ({
   circle: {
     backgroundColor: blueGrey[50],
@@ -29,6 +35,16 @@ const useStyles = makeStyles((theme) => ({
     position: "relative",
     top: "9.3rem",
     left: "6rem",
+  },
+  "@font-face": {
+    fontFamily: "Inter",
+    src: `
+      url(${interRegular}) format('truetype'),
+      url(${interBold}) format('truetype'),
+      url(${interExtraBold}) format('truetype')
+    `,
+    fontWeight: "normal",
+    fontStyle: "normal",
   },
   circle1: {
     backgroundColor: blueGrey[50],
@@ -44,201 +60,1211 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 function HomepageScreen5() {
+  const [creators_flag, set_creators_flag] = useState(true);
+  const [box_flag, set_box_flag] = useState(0);
+
+  const theme = createTheme({
+    typography: {
+      caption: {
+        fontSize: "0.75rem",
+      },
+      h5: {
+        fontSize: "calc(25/16*1rem)",
+      },
+      h1: {
+        fontSize: "calc(61.04/16*1rem)",
+      },
+      h2: {
+        fontSize: "calc(48.83/16*1rem)",
+      },
+      h3: {
+        fontSize: "calc(39.06/16*1rem)",
+      },
+      h4: {
+        fontSize: "calc(31.25/16*1rem)",
+      },
+      body1: {
+        fontSize: "calc(16/16*1rem)",
+      },
+    },
+    spacing: (factor) => `${0.8 * factor}rem`,
+  });
+  console.log(box_flag)
   const classes = useStyles();
   return (
     <>
-      <Header style={{ zIndex: 1 }} />
-      <Grid
-        container
-        spacing={1}
-        style={{
-          height: "calc(100vh - 8rem)",
-          position: "relative",
-          width: "calc(100%)",
-        }}
-      >
-        <Grid
-          item
+      <ThemeProvider theme={theme}>
+      
+        {(creators_flag==true) ? (<Grid
+          container
+          spacing={1}
           style={{
-            width: "100%",
-            marginTop: "2rem",
-            height: "16%",
-            overflowX: "hidden",
-            marginBottom: 0,
+            margin: "auto",
+            position: "relative",
+            maxWidth: "83.75rem",
           }}
         >
           <Grid
             item
-            style={{ position: "relative", left: "3.3rem", width: "40%" }}
+            style={{
+              maxWidth: "100%",
+              marginTop: "4.375rem",
+              padding: 0,
+
+              marginBottom: 0,
+            }}
           >
-            <Typography variant="body1">How it Works</Typography>
+            <Grid item style={{ position: "relative" }}>
+              <Typography
+                variant="caption"
+                style={{ fontFamily: "Inter", fontWeight: 500 }}
+              >
+                HOW IT WORKS
+              </Typography>
+            </Grid>
+            <Grid
+              container
+              justifyContent="space-between"
+              alignItems="center"
+              style={{ marginBottom: "0rem", width: "83.75rem" }}
+            >
+              <Grid item style={{ maxWidth: "39.375rem" }}>
+                <Typography
+                  variant="h1"
+                  style={{
+                    fontFamily: "Inter",
+                    fontWeight: 800,
+                    color: "#292D32",
+                  }}
+                >
+                  How it works ?
+                </Typography>
+              </Grid>
+            </Grid>
           </Grid>
           <Grid
             container
-            justifyContent="space-between"
-            alignItems="center"
-            style={{ marginBottom: "0rem" }}
-          >
-            <Grid item style={{ overflowX: "hidden", width: "40%" }}>
-              <Typography
-                variant="h3"
-                style={{ marginLeft: "3.3rem", fontWeight: "bold" }}
-              >
-                How it works ?
-              </Typography>
-            </Grid>
-          </Grid>
-        </Grid>
-        <Grid
-          container
-          style={{
-            width: "23%",
-            height: "68%",
-            marginLeft: "3.2rem",
-            marginRight: "3rem",
-            flexDirection: "column",
-          }}
-        >
-          <Typography
-            variant="h6"
-            style={{ fontWeight: "bold", marginBottom: "3rem" }}
-          >
-            Creators{" "}
-          </Typography>
-          <Typography variant="h6" style={{ marginBottom: "20rem" }}>
-            Investor
-          </Typography>
-          <Typography
-            variant="body1"
-            style={{ marginBottom: "1rem", marginRight: "2rem" }}
-          >
-            For legal, compliances and other info simply dummy text of the
-            printing and typesetting industry.
-          </Typography>
-          <Typography variant="body1">
-            Read our{" "}
-            <Button
-              color="inherit"
-              style={{ textTransform: "capitalize", fontWeight: "bold" }}
-              classes={{ root: classes.link }}
-              href="#"
-            >
-              <u> Legal Guide</u>
-            </Button>
-          </Typography>
-          <Divider
-            orientation="vertical"
-            style={{ marginLeft: "1.2rem", marginRight: "1rem" }}
-          />
-        </Grid>
-
-        <Grid
-          item
-          style={{
-            height: "55%",
-            width: "40%",
-            overflowX: "hidden",
-            marginLeft: "1.2rem",
-            marginRight: "1rem",
-          }}
-        >
-          <Card
             style={{
-              height: "100%",
-              borderRadius: "2rem",
-              display: "flex",
-              backgroundColor: "#408FF7",
+              maxWidth: "18.1875rem",
+
+              marginTop: "5.0625rem",
+
+              flexDirection: "column",
             }}
           >
-            <CardContent
+            <Typography
+              variant="h5"
               style={{
-                width: "50%",
-                height: "84.4%",
-                padding: "3rem",
-                marginTop: "1rem",
+                fontFamily: "Inter",
+                fontWeight: 800,
+
+                color: "#292D32",
               }}
             >
-               <Typography
-            variant="h2"
-            style={{ color:'white',marginBottom:'4rem' }}
+              Creators
+            </Typography>
+            <div onClick={()=>{set_creators_flag(false)}}>
+            <Typography
+              variant="h5"
+              style={{
+                fontFamily: "Inter",
+                fontWeight: 500,
+                marginTop: "2.5rem",
+                marginBottom: "20.5rem",
+                color: "#292D32",
+              }}
+            >
+              Investor
+            </Typography></div>
+            <Typography
+              variant="body1"
+              style={{
+                fontFamily: "Inter",
+                fontWeight: 400,
+                marginBottom: "1rem",
+                maxWidth: "18.1875rem",
+              }}
+            >
+              For legal, compliances and other info simply dummy text of the
+              printing and typesetting industry.
+            </Typography>
+            <Typography
+              variant="body1"
+              style={{ fontFamily: "Inter", fontWeight: 400 }}
+            >
+              Read our{""}
+              <Button
+                color="inherit"
+                style={{
+                  textTransform: "capitalize",
+                  fontWeight: 800,
+                  fontFamily: "Inter",
+                  maxWidth: "18.1875rem",
+                }}
+                classes={{ root: classes.link }}
+                href="#"
+              >
+                <u> Legal Guide</u>
+              </Button>
+            </Typography>
+          </Grid>
+          <Divider
+            orientation="vertical"
+            style={{
+              marginLeft: "1.3125rem",
+              color: "#C5C6CC",
+              width: ".0625rem",
+              height: "35rem",
+              marginTop: "4.375rem",
+              marginBottom: "4.375rem",
+            }}
+          />
+          {box_flag == 0 ? (
+            <Grid
+              item
+              style={{
+                marginTop: "4.375rem",
+                width: "39.0625rem",
+                overflowX: "hidden",
+                marginLeft: "3.75rem",
+                marginRight: "1.875rem",
+                padding: 0,
+                height: "29.3125rem",
+              }}
+            >
+              <Card
+                
+                style={{
+                  height: "100%",
+                  width: "100%",
+                  borderRadius: "1.5rem",
+                  display: "flex",
+                  backgroundColor: "#408FF7",
+                  boxShadow: "none",
+                  position: "relative",
+                }}
+              >
+                <CardContent
+                  style={{
+                    maxWidth: "26.625rem",
+                    height: "100%",
+                    padding: 0,
+                  }}
+                >
+                  <Typography
+                    variant="h1"
+                    style={{
+                      color: "white",
+                      marginTop: "3.125rem",
+                      marginLeft: "2rem",
+                      fontFamily: "Inter",
+                      fontWeight: 500,
+                    }}
+                  >
+                    01
+                  </Typography>
+                  <Typography
+                    variant="h4"
+                    style={{
+                      marginTop: "4.125rem",
+                      color: "white",
+                      fontWeight: "bold",
+                      marginLeft: "2rem",
+                      fontFamily: "Inter",
+                      fontWeight: 800,
+                    }}
+                  >
+                    Sign up
+                  </Typography>
+                  <Typography
+                    variant="body1"
+                    style={{
+                      marginTop: "1.5rem",
+                      color: "white",
+                      marginLeft: "2rem",
+                      fontFamily: "Inter",
+                      fontWeight: 400,
+                    }}
+                  >
+                    For legal, compliances and other info simply dummy text of
+                    the printing and typesetting industry.
+                  </Typography>
+                  <Typography
+                    variant="body1"
+                    style={{
+                      marginTop: "5.7rem",
+                      color: "white",
+                      marginLeft: "2rem",
+                      fontFamily: "Inter",
+                      fontWeight: 800,
+                    }}
+                  >
+                    Read More
+                  </Typography>
+                </CardContent>
+                <div // Add this div to create the circle quadrant
+                  style={{
+                    position: "absolute",
+                    bottom: 0,
+                    right: 0,
+                    width: "12.8125rem",
+                    height: "12.8125rem",
+                    backgroundColor: "#fff",
+                    borderTopLeftRadius: "100%",
+                    opacity: "20%",
+                  }}
+                />
+              </Card>
+            </Grid>
+          ) : (
+            <Grid
+              item
+              style={{
+                height: "29.3125rem",
+                width: "8.8125rem",
+                overflowX: "hidden",
+                padding: 0,
+                marginTop: "4.375rem",
+                marginLeft: "3.75rem",
+                marginRight: "1.875rem",
+              }}
+            >
+              <Card
+              onClick={()=>{set_box_flag(0)}}
+                style={{
+                  height: "100%",
+                  width: "100%",
+                  borderRadius: "1.5rem",
+                  display: "flex",
+                  backgroundColor: "#408FF7",
+                  boxShadow: "none",
+                  position: "relative",
+                }}
+              >
+                <CardContent
+                  style={{
+                    width: "8.8125rem",
+                    maxHeight: "21.3125rem",
+                    padding: 0,
+                  }}
+                >
+                  <Typography
+                    variant="h1"
+                    style={{
+                      color: "white",
+                      fontFamily: "Inter",
+                      fontWeight: 500,
+                      marginLeft: "2rem",
+                      marginTop: "3.125rem",
+                    }}
+                  >
+                    01
+                  </Typography>{" "}
+                </CardContent>
+                <div // Add this div to create the circle quadrant
+                  style={{
+                    position: "absolute",
+                    bottom: 0,
+                    right: 0,
+                    width: "6.8125rem",
+                    height: "8rem",
+                    backgroundColor: "#fff",
+                    borderTopLeftRadius: "100%",
+                    opacity: "20%",
+                  }}
+                />
+              </Card>
+            </Grid>
+          )}
+         {(box_flag!=1)?( <Grid
+            item
+            style={{
+              height: "29.3125rem",
+              width: "8.8125rem",
+              overflowX: "hidden",
+              padding: 0,
+              marginTop: "4.375rem",
+              marginRight: "1.875rem",
+            }}
           >
-            01
-          </Typography>  
-          <Typography
-            variant="h5"
-            style={{ marginBottom: "1rem",color:'white',fontWeight:'bold' }}
+            <Card
+            onClick={()=>{set_box_flag(1)}}
+              style={{
+                height: "100%",
+                width: "100%",
+                borderRadius: "1.5rem",
+                display: "flex",
+                backgroundColor: "#D2EC4C",
+                boxShadow: "none",
+                position: "relative",
+              }}
+            >
+              <CardContent
+                style={{
+                  width: "8.8125rem",
+                  maxHeight: "21.3125rem",
+                  padding: 0,
+                }}
+              >
+                <Typography
+                  variant="h1"
+                  style={{
+                    color: "black",
+                    fontFamily: "Inter",
+                    fontWeight: 500,
+                    marginLeft: "2rem",
+                    marginTop: "3.125rem",
+                  }}
+                >
+                  02
+                </Typography>{" "}
+              </CardContent>
+              <div // Add this div to create the circle quadrant
+                style={{
+                  position: "absolute",
+                  bottom: 0,
+                  right: 0,
+                  width: "6.8125rem",
+                  height: "8rem",
+                  backgroundColor: "#fff",
+                  borderTopLeftRadius: "100%",
+                  opacity: "20%",
+                }}
+              />
+            </Card>
+          </Grid>
+          ):(<Grid
+            item
+            style={{
+              marginTop: "4.375rem",
+              width: "39.0625rem",
+              overflowX: "hidden",
+              
+              marginRight: "1.875rem",
+              padding: 0,
+              height: "29.3125rem",
+            }}
           >
-            Why invest ?
-          </Typography>
-          <Typography
-            variant="body1"
-            style={{ marginBottom: "1rem", marginRight: "2rem",color:'white' }}
+            <Card
+              style={{
+                height: "100%",
+                width: "100%",
+                borderRadius: "1.5rem",
+                display: "flex",
+                backgroundColor: "#D2EC4C",
+                boxShadow: "none",
+                position: "relative",
+              }}
+            >
+              <CardContent
+                style={{
+                  maxWidth: "26.625rem",
+                  height: "100%",
+                  padding: 0,
+                }}
+              >
+                <Typography
+                  variant="h1"
+                  style={{
+                    color: "black",
+                    marginTop: "3.125rem",
+                    marginLeft: "2rem",
+                    fontFamily: "Inter",
+                    fontWeight: 500,
+                  }}
+                >
+                  02
+                </Typography>
+                <Typography
+                  variant="h4"
+                  style={{
+                    marginTop: "4.125rem",
+                    color: "black",
+                    fontWeight: "bold",
+                    marginLeft: "2rem",
+                    fontFamily: "Inter",
+                    fontWeight: 800,
+                  }}
+                >
+                  Pitch Card
+                </Typography>
+                <Typography
+                  variant="body1"
+                  style={{
+                    marginTop: "1.5rem",
+                    color: "black",
+                    marginLeft: "2rem",
+                    fontFamily: "Inter",
+                    fontWeight: 400,
+                  }}
+                >
+                  Fill out the pitch card to give the community an insight into your vision.
+                </Typography>
+                <Typography
+                    variant="body1"
+                    style={{
+                      marginTop: "6rem",
+                      color: "black",
+                      marginLeft: "2rem",
+                      fontFamily: "Inter",
+                      fontWeight: 800,
+                    }}
+                  >
+                    Read More
+                  </Typography>
+              </CardContent>
+              <div // Add this div to create the circle quadrant
+                style={{
+                  position: "absolute",
+                  bottom: 0,
+                  right: 0,
+                  width: "12.8125rem",
+                  height: "12.8125rem",
+                  backgroundColor: "#fff",
+                  borderTopLeftRadius: "100%",
+                  opacity: "20%",
+                }}
+              />
+            </Card>
+          </Grid>)}
+          {(box_flag!=2)?( <Grid
+            item
+            onClick={()=>{set_box_flag(2)}}
+            style={{
+              height: "29.3125rem",
+              width: "8.8125rem",
+              overflowX: "hidden",
+              padding: 0,
+              marginTop: "4.375rem",
+              
+            }}
           >
-            For legal, compliances and other info simply dummy text of the
-            printing and typesetting industry.
-          </Typography>
-            </CardContent>
-          </Card>
-        </Grid>
+            <Card
+              style={{
+                height: "100%",
+                width: "100%",
+                borderRadius: "1.5rem",
+                display: "flex",
+                backgroundColor: "#57BF43",
+                boxShadow: "none",
+                position: "relative",
+              }}
+            >
+              <CardContent
+                style={{
+                  width: "8.8125rem",
+                  maxHeight: "21.3125rem",
+                  padding: 0,
+                }}
+              >
+                <Typography
+                  variant="h1"
+                  style={{
+                    color: "white",
+                    fontFamily: "Inter",
+                    fontWeight: 500,
+                    marginLeft: "2rem",
+                    marginTop: "3.125rem",
+                  }}
+                >
+                  03
+                </Typography>{" "}
+              </CardContent>
+              <div // Add this div to create the circle quadrant
+                style={{
+                  position: "absolute",
+                  bottom: 0,
+                  right: 0,
+                  width: "6.8125rem",
+                  height: "8rem",
+                  backgroundColor: "#fff",
+                  borderTopLeftRadius: "100%",
+                  opacity: "20%",
+                }}
+              />
+            </Card>
+          </Grid>
+          ):(<Grid
+            item
+            style={{
+              marginTop: "4.375rem",
+              width: "39.0625rem",
+              overflowX: "hidden",
+              
+             
+              padding: 0,
+              height: "29.3125rem",
+            }}
+          >
+            <Card
+              style={{
+                height: "100%",
+                width: "100%",
+                borderRadius: "1.5rem",
+                display: "flex",
+                backgroundColor: "#57BF43",
+                boxShadow: "none",
+                position: "relative",
+              }}
+            >
+              <CardContent
+                style={{
+                  maxWidth: "26.625rem",
+                  height: "100%",
+                  padding: 0,
+                }}
+              >
+                <Typography
+                  variant="h1"
+                  style={{
+                    color: "white",
+                    marginTop: "3.125rem",
+                    marginLeft: "2rem",
+                    fontFamily: "Inter",
+                    fontWeight: 500,
+                  }}
+                >
+                  03
+                </Typography>
+                <Typography
+                  variant="h4"
+                  style={{
+                    marginTop: "4.125rem",
+                    color: "white",
+                    fontWeight: "bold",
+                    marginLeft: "2rem",
+                    fontFamily: "Inter",
+                    fontWeight: 800,
+                  }}
+                >
+                  Updates
+                </Typography>
+                <Typography
+                  variant="body1"
+                  style={{
+                    marginTop: "1.5rem",
+                    color: "white",
+                    marginLeft: "2rem",
+                    fontFamily: "Inter",
+                    fontWeight: 400,
+                  }}
+                >
+                 From concept to prototype, share your progress.
+                </Typography>
+                <Typography
+                    variant="body1"
+                    style={{
+                      marginTop: "6rem",
+                      color: "white",
+                      marginLeft: "2rem",
+                      fontFamily: "Inter",
+                      fontWeight: 800,
+                    }}
+                  >
+                    Read More
+                  </Typography>
+              </CardContent>
+              <div // Add this div to create the circle quadrant
+                style={{
+                  position: "absolute",
+                  bottom: 0,
+                  right: 0,
+                  width: "12.8125rem",
+                  height: "12.8125rem",
+                  backgroundColor: "#fff",
+                  borderTopLeftRadius: "100%",
+                  opacity: "20%",
+                }}
+              />
+            </Card>
+          </Grid>)}
+        </Grid>):(<Grid
+          container
+          spacing={1}
+          style={{
+            margin: "auto",
+            position: "relative",
+            maxWidth: "83.75rem",
+          }}
+        >
+          <Grid
+            item
+            style={{
+              maxWidth: "100%",
+              marginTop: "4.375rem",
+              padding: 0,
 
-        <Grid
-          item
-          style={{
-            height: "55%",
-            width: "11%",
-            overflowX: "hidden",
-            marginLeft: "1.2rem",
-            marginRight: "1rem",
-          }}
-        >
-          <Card
-            style={{ height: "100%", borderRadius: "2rem", display: "flex",backgroundColor:'#D2EC4C' }}
+              marginBottom: 0,
+            }}
           >
-            <CardContent
+            <Grid item style={{ position: "relative" }}>
+              <Typography
+                variant="caption"
+                style={{ fontFamily: "Inter", fontWeight: 500 }}
+              >
+                HOW IT WORKS
+              </Typography>
+            </Grid>
+            <Grid
+              container
+              justifyContent="space-between"
+              alignItems="center"
+              style={{ marginBottom: "0rem", width: "83.75rem" }}
+            >
+              <Grid item style={{ maxWidth: "39.375rem" }}>
+                <Typography
+                  variant="h1"
+                  style={{
+                    fontFamily: "Inter",
+                    fontWeight: 800,
+                    color: "#292D32",
+                  }}
+                >
+                  How it works ?
+                </Typography>
+              </Grid>
+            </Grid>
+          </Grid>
+          <Grid
+            container
+            style={{
+              maxWidth: "18.1875rem",
+
+              marginTop: "5.0625rem",
+
+              flexDirection: "column",
+            }}
+          >
+            <div onClick={()=>set_creators_flag(true)}>
+            <Typography
+              variant="h5"
               style={{
-                width: "50%",
-                height: "84.4%",
-                padding: "3rem",
-                marginTop: "1rem",
+                fontFamily: "Inter",
+                fontWeight: 500,
+
+                color: "#292D32",
               }}
-            ><Typography
-            variant="h2"
-            style={{ color:'black' }}
-          >
-            02
-          </Typography>  </CardContent>
-          </Card>
-        </Grid>
-        <Grid
-          item
-          style={{
-            height: "55%",
-            width: "11%",
-            overflowX: "hidden",
-            marginLeft: "1.2rem",
-            marginRight: "1rem",
-          }}
-        >
-          <Card
-            style={{ height: "100%", borderRadius: "2rem", display: "flex",backgroundColor:'#57BF43' }}
-          >
-            <CardContent
+            >
+              Creators
+            </Typography></div>
+          
+            <Typography
+              variant="h5"
               style={{
-                width: "50%",
-                height: "84.4%",
-                padding: "3rem",
-                marginTop: "1rem",
+                fontFamily: "Inter",
+                fontWeight: 800,
+                marginTop: "2.5rem",
+                marginBottom: "20.5rem",
+                color: "#292D32",
               }}
-            ><Typography
-            variant="h2"
-            style={{ color:'white' }}
+            >
+              Investor
+            </Typography>
+            <Typography
+              variant="body1"
+              style={{
+                fontFamily: "Inter",
+                fontWeight: 400,
+                marginBottom: "1rem",
+                maxWidth: "18.1875rem",
+              }}
+            >
+              For legal, compliances and other info simply dummy text of the
+              printing and typesetting industry.
+            </Typography>
+            <Typography
+              variant="body1"
+              style={{ fontFamily: "Inter", fontWeight: 400 }}
+            >
+              Read our{""}
+              <Button
+                color="inherit"
+                style={{
+                  textTransform: "capitalize",
+                  fontWeight: 800,
+                  fontFamily: "Inter",
+                  maxWidth: "18.1875rem",
+                }}
+                classes={{ root: classes.link }}
+                href="#"
+              >
+                <u> Legal Guide</u>
+              </Button>
+            </Typography>
+          </Grid>
+          <Divider
+            orientation="vertical"
+            style={{
+              marginLeft: "1.3125rem",
+              color: "#C5C6CC",
+              width: ".0625rem",
+              height: "35rem",
+              marginTop: "4.375rem",
+              marginBottom: "4.375rem",
+            }}
+          />
+          {box_flag == 0 ? (
+            <Grid
+              item
+              style={{
+                marginTop: "4.375rem",
+                width: "39.0625rem",
+                overflowX: "hidden",
+                marginLeft: "3.75rem",
+                marginRight: "1.875rem",
+                padding: 0,
+                height: "29.3125rem",
+              }}
+            >
+              <Card
+                
+                style={{
+                  height: "100%",
+                  width: "100%",
+                  borderRadius: "1.5rem",
+                  display: "flex",
+                  backgroundColor: "#408FF7",
+                  boxShadow: "none",
+                  position: "relative",
+                }}
+              >
+                <CardContent
+                  style={{
+                    maxWidth: "26.625rem",
+                    height: "100%",
+                    padding: 0,
+                  }}
+                >
+                  <Typography
+                    variant="h1"
+                    style={{
+                      color: "white",
+                      marginTop: "3.125rem",
+                      marginLeft: "2rem",
+                      fontFamily: "Inter",
+                      fontWeight: 500,
+                    }}
+                  >
+                    01
+                  </Typography>
+                  <Typography
+                    variant="h4"
+                    style={{
+                      marginTop: "4.125rem",
+                      color: "white",
+                      fontWeight: "bold",
+                      marginLeft: "2rem",
+                      fontFamily: "Inter",
+                      fontWeight: 800,
+                    }}
+                  >
+                    Sign up
+                  </Typography>
+                  <Typography
+                    variant="body1"
+                    style={{
+                      marginTop: "1.5rem",
+                      color: "white",
+                      marginLeft: "2rem",
+                      fontFamily: "Inter",
+                      fontWeight: 400,
+                    }}
+                  >
+                    For legal, compliances and other info simply dummy text of
+                    the printing and typesetting industry.
+                  </Typography>
+                  <Typography
+                    variant="body1"
+                    style={{
+                      marginTop: "5.7rem",
+                      color: "white",
+                      marginLeft: "2rem",
+                      fontFamily: "Inter",
+                      fontWeight: 800,
+                    }}
+                  >
+                    Read More
+                  </Typography>
+                </CardContent>
+                <div // Add this div to create the circle quadrant
+                  style={{
+                    position: "absolute",
+                    bottom: 0,
+                    right: 0,
+                    width: "12.8125rem",
+                    height: "12.8125rem",
+                    backgroundColor: "#fff",
+                    borderTopLeftRadius: "100%",
+                    opacity: "20%",
+                  }}
+                />
+              </Card>
+            </Grid>
+          ) : (
+            <Grid
+              item
+              style={{
+                height: "29.3125rem",
+                width: "8.8125rem",
+                overflowX: "hidden",
+                padding: 0,
+                marginTop: "4.375rem",
+                marginLeft: "3.75rem",
+                marginRight: "1.875rem",
+              }}
+            >
+              <Card
+              onClick={()=>{set_box_flag(0)}}
+                style={{
+                  height: "100%",
+                  width: "100%",
+                  borderRadius: "1.5rem",
+                  display: "flex",
+                  backgroundColor: "#408FF7",
+                  boxShadow: "none",
+                  position: "relative",
+                }}
+              >
+                <CardContent
+                  style={{
+                    width: "8.8125rem",
+                    maxHeight: "21.3125rem",
+                    padding: 0,
+                  }}
+                >
+                  <Typography
+                    variant="h1"
+                    style={{
+                      color: "white",
+                      fontFamily: "Inter",
+                      fontWeight: 500,
+                      marginLeft: "2rem",
+                      marginTop: "3.125rem",
+                    }}
+                  >
+                    01
+                  </Typography>{" "}
+                </CardContent>
+                <div // Add this div to create the circle quadrant
+                  style={{
+                    position: "absolute",
+                    bottom: 0,
+                    right: 0,
+                    width: "6.8125rem",
+                    height: "8rem",
+                    backgroundColor: "#fff",
+                    borderTopLeftRadius: "100%",
+                    opacity: "20%",
+                  }}
+                />
+              </Card>
+            </Grid>
+          )}
+         {(box_flag!=1)?( <Grid
+            item
+            style={{
+              height: "29.3125rem",
+              width: "8.8125rem",
+              overflowX: "hidden",
+              padding: 0,
+              marginTop: "4.375rem",
+              marginRight: "1.875rem",
+            }}
           >
-            03
-          </Typography>  </CardContent>
-          </Card>
-        </Grid>
-      </Grid>
-      <Navbar />
+            <Card
+            onClick={()=>{set_box_flag(1)}}
+              style={{
+                height: "100%",
+                width: "100%",
+                borderRadius: "1.5rem",
+                display: "flex",
+                backgroundColor: "#D2EC4C",
+                boxShadow: "none",
+                position: "relative",
+              }}
+            >
+              <CardContent
+                style={{
+                  width: "8.8125rem",
+                  maxHeight: "21.3125rem",
+                  padding: 0,
+                }}
+              >
+                <Typography
+                  variant="h1"
+                  style={{
+                    color: "black",
+                    fontFamily: "Inter",
+                    fontWeight: 500,
+                    marginLeft: "2rem",
+                    marginTop: "3.125rem",
+                  }}
+                >
+                  02
+                </Typography>{" "}
+              </CardContent>
+              <div // Add this div to create the circle quadrant
+                style={{
+                  position: "absolute",
+                  bottom: 0,
+                  right: 0,
+                  width: "6.8125rem",
+                  height: "8rem",
+                  backgroundColor: "#fff",
+                  borderTopLeftRadius: "100%",
+                  opacity: "20%",
+                }}
+              />
+            </Card>
+          </Grid>
+          ):(<Grid
+            item
+            style={{
+              marginTop: "4.375rem",
+              width: "39.0625rem",
+              overflowX: "hidden",
+              
+              marginRight: "1.875rem",
+              padding: 0,
+              height: "29.3125rem",
+            }}
+          >
+            <Card
+              style={{
+                height: "100%",
+                width: "100%",
+                borderRadius: "1.5rem",
+                display: "flex",
+                backgroundColor: "#D2EC4C",
+                boxShadow: "none",
+                position: "relative",
+              }}
+            >
+              <CardContent
+                style={{
+                  maxWidth: "26.625rem",
+                  height: "100%",
+                  padding: 0,
+                }}
+              >
+                <Typography
+                  variant="h1"
+                  style={{
+                    color: "black",
+                    marginTop: "3.125rem",
+                    marginLeft: "2rem",
+                    fontFamily: "Inter",
+                    fontWeight: 500,
+                  }}
+                >
+                  02
+                </Typography>
+                <Typography
+                  variant="h4"
+                  style={{
+                    marginTop: "4.125rem",
+                    color: "black",
+                    fontWeight: "bold",
+                    marginLeft: "2rem",
+                    fontFamily: "Inter",
+                    fontWeight: 800,
+                  }}
+                >
+                  Browse
+                </Typography>
+                <Typography
+                  variant="body1"
+                  style={{
+                    marginTop: "1.5rem",
+                    color: "black",
+                    marginLeft: "2rem",
+                    fontFamily: "Inter",
+                    fontWeight: 400,
+                  }}
+                >
+                  Browse through projects and tag the ones that interest you.
+                </Typography>
+                <Typography
+                    variant="body1"
+                    style={{
+                      marginTop: "6.1rem",
+                      color: "black",
+                      marginLeft: "2rem",
+                      fontFamily: "Inter",
+                      fontWeight: 800,
+                    }}
+                  >
+                    Read More
+                  </Typography>
+              </CardContent>
+              <div // Add this div to create the circle quadrant
+                style={{
+                  position: "absolute",
+                  bottom: 0,
+                  right: 0,
+                  width: "12.8125rem",
+                  height: "12.8125rem",
+                  backgroundColor: "#fff",
+                  borderTopLeftRadius: "100%",
+                  opacity: "20%",
+                }}
+              />
+            </Card>
+          </Grid>)}
+          {(box_flag!=2)?( <Grid
+            item
+            onClick={()=>{set_box_flag(2)}}
+            style={{
+              height: "29.3125rem",
+              width: "8.8125rem",
+              overflowX: "hidden",
+              padding: 0,
+              marginTop: "4.375rem",
+              
+            }}
+          >
+            <Card
+              style={{
+                height: "100%",
+                width: "100%",
+                borderRadius: "1.5rem",
+                display: "flex",
+                backgroundColor: "#57BF43",
+                boxShadow: "none",
+                position: "relative",
+              }}
+            >
+              <CardContent
+                style={{
+                  width: "8.8125rem",
+                  maxHeight: "21.3125rem",
+                  padding: 0,
+                }}
+              >
+                <Typography
+                  variant="h1"
+                  style={{
+                    color: "white",
+                    fontFamily: "Inter",
+                    fontWeight: 500,
+                    marginLeft: "2rem",
+                    marginTop: "3.125rem",
+                  }}
+                >
+                  03
+                </Typography>{" "}
+              </CardContent>
+              <div // Add this div to create the circle quadrant
+                style={{
+                  position: "absolute",
+                  bottom: 0,
+                  right: 0,
+                  width: "6.8125rem",
+                  height: "8rem",
+                  backgroundColor: "#fff",
+                  borderTopLeftRadius: "100%",
+                  opacity: "20%",
+                }}
+              />
+            </Card>
+          </Grid>
+          ):(<Grid
+            item
+            style={{
+              marginTop: "4.375rem",
+              width: "39.0625rem",
+              overflowX: "hidden",
+              
+             
+              padding: 0,
+              height: "29.3125rem",
+            }}
+          >
+            <Card
+              style={{
+                height: "100%",
+                width: "100%",
+                borderRadius: "1.5rem",
+                display: "flex",
+                backgroundColor: "#57BF43",
+                boxShadow: "none",
+                position: "relative",
+              }}
+            >
+              <CardContent
+                style={{
+                  maxWidth: "26.625rem",
+                  height: "100%",
+                  padding: 0,
+                }}
+              >
+                <Typography
+                  variant="h1"
+                  style={{
+                    color: "white",
+                    marginTop: "3.125rem",
+                    marginLeft: "2rem",
+                    fontFamily: "Inter",
+                    fontWeight: 500,
+                  }}
+                >
+                  03
+                </Typography>
+                <Typography
+                  variant="h4"
+                  style={{
+                    marginTop: "4.125rem",
+                    color: "white",
+                    fontWeight: "bold",
+                    marginLeft: "2rem",
+                    fontFamily: "Inter",
+                    fontWeight: 800,
+                  }}
+                >
+                  Updates
+                </Typography>
+                <Typography
+                  variant="body1"
+                  style={{
+                    marginTop: "1.5rem",
+                    color: "white",
+                    marginLeft: "2rem",
+                    fontFamily: "Inter",
+                    fontWeight: 400,
+                  }}
+                >
+                View updates on a project’s progress or get notified when the creator is ready to raise funds
+                </Typography>
+                <Typography
+                    variant="body1"
+                    style={{
+                      marginTop: "5.7rem",
+                      color: "white",
+                      marginLeft: "2rem",
+                      fontFamily: "Inter",
+                      fontWeight: 800,
+                    }}
+                  >
+                    Read More
+                  </Typography>
+              </CardContent>
+              <div // Add this div to create the circle quadrant
+                style={{
+                  position: "absolute",
+                  bottom: 0,
+                  right: 0,
+                  width: "12.8125rem",
+                  height: "12.8125rem",
+                  backgroundColor: "#fff",
+                  borderTopLeftRadius: "100%",
+                  opacity: "20%",
+                }}
+              />
+            </Card>
+          </Grid>)}
+        </Grid>)}
+      
+      </ThemeProvider>
     </>
   );
 }
