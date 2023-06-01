@@ -20,6 +20,7 @@ import { blueGrey } from "@mui/material/colors";
 import interRegular from "../static/Inter-Regular.ttf";
 import interBold from "../static/Inter-Bold.ttf";
 import interExtraBold from "../static/Inter-ExtraBold.ttf";
+import interSemiBold from "../static/Inter-SemiBold.ttf";
 import { createTheme, ThemeProvider } from "@material-ui/core/styles";
 const useStyles = makeStyles((theme) => ({
   circle: {
@@ -38,6 +39,7 @@ const useStyles = makeStyles((theme) => ({
       url(${interRegular}) format('truetype'),
       url(${interBold}) format('truetype'),
       url(${interExtraBold}) format('truetype')
+      url(${interSemiBold}) format('truetype')
     `,
     fontWeight: "normal",
     fontStyle: "normal",
@@ -124,7 +126,7 @@ function HomepageScreen13() {
               
               style={{ marginBottom: "0rem", width: "100%", padding: 0 }}
             >
-              <Grid item style={{ maxWidth: "36.625rem", padding: 0 ,marginTop:'.6rem'}}>
+              <Grid item style={{ maxWidth: "20.625rem", padding: 0 ,marginTop:'.6rem'}}>
                 <Typography
                   variant="h1"
                   style={{
@@ -133,7 +135,7 @@ function HomepageScreen13() {
                     color: "#292D32",
                   }}
                 >
-                  Shuru's Roadmap
+                   Roadmap for Shuru
                 </Typography>
               </Grid>
               
@@ -143,8 +145,8 @@ function HomepageScreen13() {
         <Grid
           container
           style={{
-            width: "54.88%",
-            height: "40.0625rem",
+            width: "56.88%",
+            height: "42rem",
             marginTop: "4.175rem",
             
           }}
@@ -166,7 +168,26 @@ function HomepageScreen13() {
                 backgroundColor: "white",
               }}
             >
-              
+              <Grid container style={{marginLeft:"6.25rem",marginTop:"3.5625rem"}}>
+                <Typography variant="h5"style={{fontFamily:'Inter',fontWeight:550}}>
+                  User Research
+                </Typography>
+              </Grid>
+              <Grid container style={{marginLeft:"6.25rem",marginTop:"5.75rem"}}>
+                <Typography variant="h5"style={{fontFamily:'Inter',fontWeight:550}}>
+                  Brainstorming+Wireframing
+                </Typography>
+              </Grid>
+              <Grid container style={{marginLeft:"6.25rem",marginTop:"7.2rem"}}>
+                <Typography variant="h5"style={{fontFamily:'Inter',fontWeight:550}}>
+                  Design System
+                </Typography>
+              </Grid>
+              <Grid container style={{marginLeft:"6.25rem",marginTop:"7.2rem"}}>
+                <Typography variant="h5"style={{fontFamily:'Inter',fontWeight:550}}>
+                 Hifi Design
+                </Typography>
+              </Grid>
             </CardContent>
           </Card>
         </Grid>

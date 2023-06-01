@@ -274,7 +274,7 @@ function HomepageScreen5() {
                       fontWeight: 800,
                     }}
                   >
-                    Sign up
+                   Explore
                   </Typography>
                   <Typography
                     variant="body1"
@@ -286,8 +286,7 @@ function HomepageScreen5() {
                       fontWeight: 400,
                     }}
                   >
-                    For legal, compliances and other info simply dummy text of
-                    the printing and typesetting industry.
+                    Sign up and explore ideas. 
                   </Typography>
                   <Typography
                     variant="body1"
@@ -486,7 +485,7 @@ function HomepageScreen5() {
                     fontWeight: 800,
                   }}
                 >
-                  Pitch Card
+                  Experiment
                 </Typography>
                 <Typography
                   variant="body1"
@@ -498,7 +497,7 @@ function HomepageScreen5() {
                     fontWeight: 400,
                   }}
                 >
-                  Fill out the pitch card to give the community an insight into your vision.
+                  Find ideas that excite you, experiment with technology and begin prototyping.
                 </Typography>
                 <Typography
                     variant="body1"
@@ -637,7 +636,7 @@ function HomepageScreen5() {
                     fontWeight: 800,
                   }}
                 >
-                  Updates
+                  Share your progress
                 </Typography>
                 <Typography
                   variant="body1"
@@ -649,7 +648,7 @@ function HomepageScreen5() {
                     fontWeight: 400,
                   }}
                 >
-                 From concept to prototype, share your progress.
+                Share updates with the community as you reach your milestones. 
                 </Typography>
                 <Typography
                     variant="body1"
@@ -858,7 +857,7 @@ function HomepageScreen5() {
                       fontWeight: 800,
                     }}
                   >
-                    Sign up
+                    Explore
                   </Typography>
                   <Typography
                     variant="body1"
@@ -870,8 +869,7 @@ function HomepageScreen5() {
                       fontWeight: 400,
                     }}
                   >
-                    For legal, compliances and other info simply dummy text of
-                    the printing and typesetting industry.
+                    Sign up and explore ideas
                   </Typography>
                   <Typography
                     variant="body1"
@@ -1070,7 +1068,7 @@ function HomepageScreen5() {
                     fontWeight: 800,
                   }}
                 >
-                  Browse
+                  Follow creators
                 </Typography>
                 <Typography
                   variant="body1"
@@ -1082,7 +1080,7 @@ function HomepageScreen5() {
                     fontWeight: 400,
                   }}
                 >
-                  Browse through projects and tag the ones that interest you.
+                  Tag the ideas you like and get access to a project’s prototype by the creators. 
                 </Typography>
                 <Typography
                     variant="body1"
@@ -1221,7 +1219,7 @@ function HomepageScreen5() {
                     fontWeight: 800,
                   }}
                 >
-                  Updates
+                 Notifications
                 </Typography>
                 <Typography
                   variant="body1"
@@ -1233,7 +1231,7 @@ function HomepageScreen5() {
                     fontWeight: 400,
                   }}
                 >
-                View updates on a project’s progress or get notified when the creator is ready to raise funds
+                Receive notifications when a project you like is ready to raise funds
                 </Typography>
                 <Typography
                     variant="body1"

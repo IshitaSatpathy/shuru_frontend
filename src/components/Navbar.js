@@ -59,7 +59,7 @@ function Navbar() {
         <Button color="inherit" style={{textTransform:'capitalize',fontWeight:'bold',padding:0,width:'8rem',justifyContent:'left'}} classes={{ root: classes.link }} href="#">
         <Typography variant='body1' style={{fontFamily:'Inter',fontWeight:800,color:'#292D32'}}> <u> Get in Touch</u></Typography> 
         </Button>
-        <Grid container style={{marginLeft:'16.7395rem',width:'65.3125rem',height:'3rem',}}>
+        <Grid container style={{marginLeft:'25.9395rem',width:'65.3125rem',height:'3rem',}}>
           <Paper style={{boxShadow:'none',borderRadius:'.75rem',}}>
           <a href="#projects" style={{ textDecoration: 'none' }}>
           <Button  color="inherit" className={classes.button}  >
@@ -93,9 +93,7 @@ function Navbar() {
           <Button color="inherit" className={classes.button}>
           <Typography variant='caption' style={{fontFamily:'Inter',margin:'.45rem',fontWeight:500,color:'#292D32'}}> Roadmap</Typography>
           </Button></a>
-          <Button color="inherit" className={classes.button}>
-          <Typography variant='caption' style={{fontFamily:'Inter',margin:'.45rem',fontWeight:500,color:'#292D32'}}>  Partners</Typography>
-          </Button>
+     
           <a href="#press" style={{ textDecoration: 'none' }}>
           <Button color="inherit" className={classes.button} style={{ }}>
           <Typography variant='caption' style={{fontFamily:'Inter',margin:'.61rem',fontWeight:500,color:'#292D32'}}>  Press</Typography>

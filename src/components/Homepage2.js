@@ -158,13 +158,11 @@ function HomepageScreen2() {
               }}
             >
               <Typography variant="body1" style={{fontFamily:'Inter',fontWeight:400,color:'#292D32'}}>
-                Shuru campaigns make ideas into reality. It’s where creators
-                share new visions for creative work with the communities that
-                will come together to fund them.
+              Shuru is a community for creators and investors to build on the ideas they’re passionate about. 
               </Typography>
               
             </Grid>
-            <Grid item align="right" style={{ overflowX: "hidden" }}>
+            {/* <Grid item align="right" style={{ overflowX: "hidden" }}>
                 <Grid container spacing="">
                 {creators.map((creator, index) => (
     <Grid item key={creator.name} style={{ marginLeft: index !== 0 ? '-.85rem' : 0 }}>
@@ -187,7 +185,7 @@ function HomepageScreen2() {
                    <b>+1342 </b> creators
                   </Typography>
                 </Grid>
-              </Grid>
+              </Grid> */}
               </Grid>
           </Grid>
           <Grid
@@ -356,7 +354,7 @@ function HomepageScreen2() {
             >
               <Typography variant="body1" style={{ fontWeight: 800,fontFamily:'Inter',marginTop:'.2rem' ,marginBottom:'.2rem'}}>
                 {" "}
-                Explore Projects{" "}
+                Explore Ideas{" "}
               </Typography>{" "}
               &nbsp;
               <EastIcon color="white;" />
@@ -369,7 +367,7 @@ function HomepageScreen2() {
             >
               <Typography variant="body1" style={{ fontWeight: 800,fontFamily:'Inter',color:'#292D32' }}>
                 {" "}
-                <u> Start a project</u>
+                <u>Propose an idea</u>
               </Typography>
             </Button>
           </div>

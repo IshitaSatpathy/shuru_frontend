@@ -19,6 +19,7 @@ import interRegular from '../static/Inter-Regular.ttf';
 import interBold from '../static/Inter-Bold.ttf';
 import interExtraBold from '../static/Inter-ExtraBold.ttf';
 import EastIcon from "@mui/icons-material/East";
+import whyshuru from "../whyshuru.png";
 import { createMuiTheme, ThemeProvider } from "@material-ui/core/styles";
 const useStyles = makeStyles((theme) => ({
   circle: {
@@ -154,9 +155,9 @@ function HomepageScreen4() {
               }}
             >
               <img
-                src="https://s3-alpha-sig.figma.com/img/59c3/49fb/06801f29bedd8cfba836abe10f9fd54a?Expires=1685923200&Signature=fmRIZYAtuQg9n3jBjZ7gZH2ePhixsGAjQKowYcr00-EziZs51z3DKHDy1xM453QmLutwYAJwMSLcf3O68N8-2i8~U1wIDN7GdAByRPcZprkZMdY9LIg-Okwd44AP6KJ99E6l9MfINPizGKVaPSLf7FjSb4Ex-Gz4HAXdWlbNYTuQcipv41E~mcel2~hkQl18EVUVeJKpkQorlx7ROTidfwC6U58gMRw5DMFuBpK2wKIJeEkLjoi-6JiqKLwXgANCI~9KYzizFJ0sdDsTiFeQhxwBpkUFa0VE0jxdZBBA3IFp~4-J15U~TS~SYWlcnUQFm-B642PGj9Rkg0WsK6JLaQ__&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4"
+                src={whyshuru}
                 alt="card-image"
-                style={{ width: "94.78%", height: "92.39%",borderRadius: "1.5rem",marginLeft:'1.375rem',marginTop:'1.375rem' }}
+                style={{ width: "100%", height: "91.39%",borderRadius: "1.5rem",marginLeft:'1.375rem',marginTop:'1.375rem' }}
               />
             </div>
             <CardContent
@@ -173,7 +174,7 @@ function HomepageScreen4() {
                   style={{ width:'9rem',fontFamily:'Inter',fontWeight:800,color:'#292D32' }}
                   gutterBottom
                 >
-                  Point 1
+                   1
                 </Typography>
                 <Typography
                   variant="body1"
@@ -187,7 +188,7 @@ function HomepageScreen4() {
                   style={{ width:'9rem',fontFamily:'Inter',fontWeight:800,color:'#292D32' }}
                   gutterBottom
                 >
-                  Point 2
+                 2
                 </Typography>
                 <Typography
                   variant="body1"
@@ -201,7 +202,7 @@ function HomepageScreen4() {
                   style={{ width:'9rem',fontFamily:'Inter',fontWeight:800,color:'#292D32' }}
                   gutterBottom
                 >
-                  Point 3
+                  3
                 </Typography>
                 <Typography
                   variant="body1"

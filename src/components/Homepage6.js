@@ -534,7 +534,7 @@ props.setst(1)
                       variant="h5"
                       style={{fontFamily:'Inter',fontWeight:500,color:'#292D32',marginLeft:'1.25rem',marginTop:'.1rem',  }}
                     >
-                      Receive updates from creators, and commit funds in stages.. 
+                      Receive updates from creators, and commit funds in stages.
                     </Typography>
                   </Grid>
                   <Divider

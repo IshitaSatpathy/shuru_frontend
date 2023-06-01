@@ -118,6 +118,9 @@ function Centerpage() {
             <HomepageScreen9 /></div>
             <div id="press">
             <HomepageScreen10 /></div>
+            <div id="subscribe">
+              <HomepageScreen11/>
+            </div>
             
         <Navbar/>   
         </ThemeProvider> 

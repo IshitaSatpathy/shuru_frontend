@@ -8,6 +8,10 @@ import { blueGrey } from "@mui/material/colors";
 import EastIcon from "@mui/icons-material/East";
 import ChevronLeftIcon from "@mui/icons-material/ChevronLeft";
 import Bottomheaderscreen from "./bottomheader";
+import interRegular from '../static/Inter-Regular.ttf';
+import interBold from '../static/Inter-Bold.ttf';
+import interExtraBold from '../static/Inter-ExtraBold.ttf';
+import { createTheme, ThemeProvider } from "@material-ui/core/styles";
 const useStyles = makeStyles((theme) => ({
   circle: {
     backgroundColor: blueGrey[50],
@@ -21,42 +25,52 @@ const useStyles = makeStyles((theme) => ({
     top: "9.3rem",
     left: "6rem",
   },
+  '@font-face': {
+    fontFamily: 'Inter',
+    src: `
+      url(${interRegular}) format('truetype'),
+      url(${interBold}) format('truetype'),
+      url(${interExtraBold}) format('truetype')
+    `,
+    fontWeight: 'normal',
+    fontStyle: 'normal',
+  },
   notchedOutline: {
     borderColor: "#EDEEF1",
   },
   semicircleleft1: {
-    width: "10%",
-    height: "22%",
+    width: "13.575rem",
+    height: "10.5875rem",
     borderTopRightRadius: "100% 100%",
-    backgroundColor: "blue",
-    position: "fixed",
-    marginTop: "7rem",
+    backgroundColor: "#0124F1",
+    position: "relative",
+   
   },
   semicircleleft2: {
-    width: "10%",
-    height: "22%",
+    width:"13.575rem",
+    height: "10.5875rem",
     borderBottomRightRadius: "100% 100%",
-    backgroundColor: "blue",
-    position: "fixed",
-    marginTop: "20rem",
+    backgroundColor: "#0124F1",
+    position: "relative",
+    
   },
   semicircleright1: {
-    width: "10%",
-    height: "22%",
+    width: "13.575rem",
+    height: "10.5875rem",
     borderTopLeftRadius: "100% 100%",
-    backgroundColor: "blue",
-    position: "fixed",
-    right: 0,
-    marginTop: "7rem",
+    backgroundColor: "#0124F1",
+    position: "relative",
+    marginLeft:'3.77rem'
+    
   },
   semicircleright2: {
-    width: "10%",
-    height: "22%",
+    width: "13.575rem",
+    height: "10.5875rem",
     borderBottomLeftRadius: "100% 100%",
-    backgroundColor: "blue",
-    position: "fixed",
-    right: 0,
-    marginTop: "20rem",
+    backgroundColor: "#0124F1",
+    position: "relative",
+    marginLeft:'3.77rem'
+    
   },
   circle1: {
     backgroundColor: blueGrey[50],
@@ -72,32 +86,59 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 function HomepageScreen11() {
+  const theme = createTheme({
+    typography: {
+      caption: {
+        fontSize: "0.75rem",
+      },
+      h5: {
+        fontSize: "calc(25/16*1rem)",
+      },
+      h1: {
+        fontSize: "calc(61.04/16*1rem)",
+      },
+      h2: {
+        fontSize: "calc(48.83/16*1rem)",
+      },
+      h3: {
+        fontSize: "calc(39.06/16*1rem)",
+      },
+      h4: {
+        fontSize: "calc(31.25/16*1rem)",
+      },
+      body1: {
+        fontSize: "calc(16/16*1rem)",
+      },
+    },
+    spacing: (factor) => `${0.8 * factor}rem`,
+  });
   const classes = useStyles();
   return (
     <>
-      <Header style={{ zIndex: 1 }} />
+     <ThemeProvider theme={theme}>
       <Grid
-        container
-        spacing={2}
-        style={{
-          height: "calc(100vh - 8rem)",
-          position: "relative",
-          width: "calc(100%)",
-          flexDirection: "column",
-        }}
-      >
+          container
+          spacing={1}
+          style={{
+            justifyContent: "space-between",
+            alignItems: "center",
+            margin: "auto",
+            position: "relative",
+            maxWidth: "100%",
+          }}
+        >
         <Grid
           container
           style={{
-            width: "96%",
+            width: "100%",
             flex: "display",
-            flexDirection: "column",
-            height: "100%",
+            flexDirection: "row",
+            justifyContent:'space-between'
           }}
         >
           <Grid
             item
-            style={{ width: "17%", height: "100%", marginTop: "5rem" }}
+            style={{ width: "17.375rem", marginTop: "13.9125rem" }}
           >
             <div className={classes.semicircleleft1}></div>
             <div className={classes.semicircleleft2}></div>
@@ -106,17 +147,17 @@ function HomepageScreen11() {
             container
             spacing={1}
             style={{
-              height: "100%",
+              
               position: "relative",
-              width: "66%",
+              width: "43.472%",marginTop:"12.325rem"
             }}
           >
             <Grid
               item
               style={{
                 width: "100%",
-                marginTop: "2rem",
-                height: "27%",
+                
+               padding:0,
 
                 marginBottom: 0,
               }}
@@ -130,17 +171,17 @@ function HomepageScreen11() {
                 <Grid
                   item
                   style={{
-                    overflowX: "hidden",
+                   
                     width: "100%",
-                    marginLeft: "2rem",
-                    marginTop: "4rem",
+                   
                   }}
                 >
                   <Typography
                     variant="h1"
                     style={{
-                      marginLeft: "3.3rem",
-                      fontWeight: "bold",
+                   
+                      fontWeight:800,
+                      fontFamily:'Inter',
                       textAlign: "center",
                     }}
                   >
@@ -149,15 +190,15 @@ function HomepageScreen11() {
                 </Grid>
                 <Grid
                   container
-                  spacing={2}
+                  
                   alignItems="center"
                   style={{
-                    marginTop: "3rem",
+                   marginTop:'4.375rem',
                     display: "flex",
                     flexDirection: "column",
                   }}
                 >
-                  <Grid item style={{ width: "50%", marginLeft: "2rem" }}>
+                  <Grid item style={{ width: "29rem",  }}>
                     <TextField
                       id="email"
                       name="email"
@@ -168,7 +209,7 @@ function HomepageScreen11() {
                       InputProps={{
                         style: {
                           backgroundColor: "white",
-                          borderRadius: "1rem",
+                          borderRadius: ".75rem",
                           borderColor: "#EDEEF1",
                           outline: "none",
                         },
@@ -178,23 +219,24 @@ function HomepageScreen11() {
                   <Grid
                     item
                     style={{
-                      width: "50%",
-                      marginLeft: "2rem",
-                      marginTop: "2rem",
+                      width: "29rem",
+                      
+                      marginTop: "2.5rem",
+                      marginBottom:'10rem'
                     }}
                   >
                     <Button
                       type="submit"
                       variant="contained"
-                      fullWidth
+                     
                       style={{
-                        backgroundColor: "black",
-                        color: "white",
-                        height: "22%",
-                        borderRadius: "1rem",
+                        backgroundColor: "#292D32",
+                        width:"100%",
+                       
+                        borderRadius: ".75rem",
                       }}
-                    >
-                      Submit
+                    ><Typography variant="body1" style={{fontFamily:'Inter',fontWeight:800,color:'white',padding:'.3rem'}}>
+                      Submit</Typography>
                     </Button>
                   </Grid>
                 </Grid>
@@ -203,14 +245,14 @@ function HomepageScreen11() {
           </Grid>
           <Grid
             item
-            style={{ width: "17%", height: "100%", marginTop: "5rem" }}
+            style={{ width: "17.375rem", marginTop: "13.9125rem", }}
           >
             <div className={classes.semicircleright1}></div>
             <div className={classes.semicircleright2}></div>
           </Grid>
         </Grid>
       </Grid>
-      <Bottomheaderscreen />
+      </ThemeProvider>
     </>
   );
 }
