@@ -4,14 +4,19 @@ import {
   Button,
   Card,
   CardContent,
+  CardMedia,
   Grid,
   Hidden,
   Toolbar,
   Typography,
+  positions,
   Avatar,
   Divider,
   Box,
 } from "@material-ui/core";
+import img1 from '../images/eye.png';
+import img2 from '../images/pen.png';
+import img3 from '../images/clouds.png';
 import Header from "./Header";
 import Navbar from "./Navbar";
 import { IconButton } from "@mui/material";
@@ -54,6 +59,9 @@ const useStyles = makeStyles((theme) => ({
     top: "9.3rem",
     left: "32rem",
   },
+  Cardmaj:{
+    overflowY:'auto',
+  }
 }));
 function HomepageScreen9() {
   const theme = createTheme({
@@ -133,7 +141,7 @@ function HomepageScreen9() {
                     color: "#292D32",
                   }}
                 >
-                  Back the project, take the ride
+                  About Us
                 </Typography>
               </Grid>
               <Grid item style={{ maxWidth: "39rem", padding: 0,marginTop:'1.5rem' }}>
@@ -162,8 +170,6 @@ As a community, we hope to be the starting point for creators and investors to b
                     color: "#292D32",
                   }}
                 >
-                  <u>Learn about us </u>
-
                 </Typography>
               </Grid>
             </Grid>
@@ -172,28 +178,149 @@ As a community, we hope to be the starting point for creators and investors to b
           container
           style={{
             width: "48.88%",
-            height: "40.0625rem",
+            height: "42.0625rem",
             marginTop: "4.175rem",
-            
           }}
         >
-          <Card
+          <Card className={classes.Cardmaj}
             style={{
               height: "100%",
               width: "100%",
               borderRadius: "1.5rem",
               display: "flex",
               backgroundColor: "white",
-              boxShadow:'none'
+              boxShadow:'none',
             }}
           >
             <CardContent
               style={{
                 width: "100%",
                 height: "100%",
-                backgroundColor: "white",
+                backgroundColor: "white"
               }}
             >
+            <img src = {img1} alt="eye" 
+             style={{width: "50%", height:"10em" }}
+            />
+
+            <Card 
+              style={{
+                height:"25%",
+                width:"95%",
+                backgroundColor: blueGrey[50],
+                boxShadow:"none",
+                marginLeft:"1.0rem",
+              }}
+            >
+
+              <Grid item style={{ maxWidth: "35rem", padding: 0,marginTop:'2.0rem', marginLeft:'2.0rem'}}>
+                <Typography
+                  variant="h5"
+                  style={{
+                    fontFamily: "Inter",
+                    fontWeight: 400,
+                    color: "#292D32",
+                    marginBottom:'1.0rem',
+                  }}
+                >
+                  Design Studio
+                </Typography>
+                <Typography
+                variant="body"
+                style={{
+                  fontFamily: "Inter",
+                  fontWeight: 400,
+                  color: "#292D32",
+                }}
+                >
+                  Design Fiction is a framework to explore the future. It guides us to think about the present and build towards a future we want by asking simple questions that are driven by, 'what if?'
+                </Typography>
+              </Grid>
+            </Card>
+
+            <img src = {img2} alt="pen" 
+             style={{width: "70", height:"10em" }}
+            />
+
+          <Card 
+              style={{
+                height:"28%",
+                width:"95%",
+                backgroundColor: blueGrey[50],
+                boxShadow:"none",
+                marginLeft:"1.0rem"
+              }}
+            >
+              <Grid item style={{ maxWidth: "35rem", padding: 0,marginTop:'2.0rem', marginLeft:'2.0rem'}}>
+                <Typography
+                  variant="h5"
+                  style={{
+                    fontFamily: "Inter",
+                    fontWeight: 400,
+                    color: "#292D32",
+                    marginBottom:'1.0rem',
+                  }}
+                >
+                  Speculative Design
+                </Typography>
+                <Typography
+                variant="body"
+                style={{
+                  fontFamily: "Inter",
+                  fontWeight: 400,
+                  color: "#292D32",
+                }}
+                >
+                  “Speculative design gives designers an opportunity to stretch their imaginations and develop new and boundary-pushing systems and prototypes for the future.”
+                  <br/>-Anthony Duane
+                </Typography>
+              </Grid>
+            </Card>
+
+            <img src = {img3} alt="clouds" 
+             style={{width: "80%", height:"10em", marginLeft:"2rem" }}
+            />
+
+            <Card 
+              style={{
+                height:"23%",
+                width:"95%",
+                backgroundColor: blueGrey[50],
+                marginBottom:"3rem",
+                boxShadow:"none",
+                marginLeft:"1.0rem",
+              }}
+            >
+              <Grid item style={{ maxWidth: "35rem", padding: 0,marginTop:'2.0rem', marginLeft:'2.0rem'}}>
+                <Typography
+                  variant="h5"
+                  style={{
+                    fontFamily: "Inter",
+                    fontWeight: 400,
+                    color: "#292D32",
+                    marginBottom:'1.0rem',
+                  }}
+                >
+                  Calm Technology
+                </Typography>
+                <Typography
+                variant="body"
+                style={{
+                  fontFamily: "Inter",
+                  fontWeight: 400,
+                  color: "#292D32",
+                }}
+                >
+                  Design Fiction is a framework to explore the future. It guides us to think about the present and build towards a future we want by asking simple questions that are driven by, 'what if?'
+                </Typography>
+              </Grid>
+            </Card>
+
+           
+            
+
+
+
               {/* <Typography
                 variant="h2"
                 style={{

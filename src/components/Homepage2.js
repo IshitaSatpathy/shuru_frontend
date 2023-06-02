@@ -1,7 +1,7 @@
 import React from "react";
-import interRegular from '../static/Inter-Regular.ttf';
-import interBold from '../static/Inter-Bold.ttf';
-import interExtraBold from '../static/Inter-ExtraBold.ttf';
+import interRegular from "../static/Inter-Regular.ttf";
+import interBold from "../static/Inter-Bold.ttf";
+import interExtraBold from "../static/Inter-ExtraBold.ttf";
 import {
   AppBar,
   Button,
@@ -33,15 +33,15 @@ const useStyles = makeStyles((theme) => ({
     top: "9.3rem",
     left: "6rem",
   },
-  '@font-face': {
-    fontFamily: 'Inter',
+  "@font-face": {
+    fontFamily: "Inter",
     src: `
       url(${interRegular}) format('truetype'),
       url(${interBold}) format('truetype'),
       url(${interExtraBold}) format('truetype')
     `,
-    fontWeight: 'normal',
-    fontStyle: 'normal',
+    fontWeight: "normal",
+    fontStyle: "normal",
   },
   circle1: {
     backgroundColor: blueGrey[50],
@@ -108,9 +108,8 @@ function HomepageScreen2() {
 
   const classes = useStyles();
   return (
-    <div className='container1'>
+    <div className="container1">
       <ThemeProvider theme={theme}>
-      
         <Grid
           container
           spacing={1}
@@ -126,209 +125,211 @@ function HomepageScreen2() {
             item
             style={{
               maxWidth: "100%",
-              marginTop: "4.375rem",
+              marginTop: "2.375rem",
               padding: 0,
               overflowX: "hidden",
               marginBottom: 0,
             }}
           >
             <Grid item style={{ position: "relative" }}>
-              <Typography variant="caption" style={{fontFamily:'Inter',fontWeight:500,color:'#292D32'}}>OVERVIEW</Typography>
+              <Typography
+                variant="caption"
+                style={{
+                  fontFamily: "Inter",
+                  fontWeight: 500,
+                  color: "#292D32",
+                }}
+              >
+                OVERVIEW
+              </Typography>
             </Grid>
             <Grid
               container
               justifyContent="space-between"
               alignItems="center"
-              style={{ marginBottom: "0rem", width: "83.75rem" }}
-            >
-              <Grid item style={{ maxWidth: "39.375rem" }}>
-                <Typography variant="h1"  style={{ fontFamily:'Inter',fontWeight:800,color:'#292D32' }}>
-                  Bring a creative project to life.
-                </Typography>
-              </Grid>
-             
-            </Grid>
-            <Grid container justifyContent="space-between" alignItems="center" style={{width:'83.75rem'}}>
-            <Grid
-              item
               style={{
-                position: "relative",
-                maxWidth: "30.9375rem",
-                marginTop: "1rem",
+                marginTop: "2.375rem",
+                marginBottom: "0rem",
+                width: "83.75rem",
               }}
             >
-              <Typography variant="body1" style={{fontFamily:'Inter',fontWeight:400,color:'#292D32'}}>
-              Shuru is a community for creators and investors to build on the ideas they’re passionate about. 
-              </Typography>
-              
-            </Grid>
-            {/* <Grid item align="right" style={{ overflowX: "hidden" }}>
-                <Grid container spacing="">
-                {creators.map((creator, index) => (
-    <Grid item key={creator.name} style={{ marginLeft: index !== 0 ? '-.85rem' : 0 }}>
-      <Avatar style={{ border: ".2rem solid #EDEEF1", maxWidth: '2.5rem', maxHeight: '2.5rem', position: 'relative', zIndex: creators.length - index }} alt={creator.name} src={creator.imageUrl} />
-    </Grid>
-  ))}
-                  <Typography
-                    variant="body1"
-                    align="right"
-                    color="primary"
-                    style={{
-                      overflowX: "hidden",
-                      display: "block",
-                      marginTop:'.4rem',
-                      fontFamily:'Inter',
-                      marginLeft:'.7rem',
-                      color:'#292D32'
-                    }}
-                  >
-                   <b>+1342 </b> creators
-                  </Typography>
-                </Grid>
-              </Grid> */}
+              <Grid item style={{ maxWidth: "39.375rem" }}>
+                <Typography
+                  variant="h1"
+                  style={{
+                    fontFamily: "Inter",
+                    fontWeight: 800,
+                    color: "#292D32",
+                  }}
+                >
+                  Start with an idea.
+                </Typography>
               </Grid>
+            </Grid>
+            <Grid
+              container
+              justifyContent="space-between"
+              alignItems="center"
+              style={{ width: "83.75rem" }}
+            >
+              <Grid
+                item
+                style={{
+                  position: "relative",
+                  maxWidth: "30.9375rem",
+                  marginTop: "1rem",
+                }}
+              >
+                <Typography
+                  variant="body1"
+                  style={{
+                    fontFamily: "Inter",
+                    fontWeight: 400,
+                    color: "#292D32",
+                  }}
+                >
+                  Shuru is a community for creators and investors to build on
+                  the idea they're passionate about.
+                </Typography>
+              </Grid>
+            </Grid>
           </Grid>
           <Grid
             item
             style={{
-              maxWidth: "26.6875rem",
+              width: "100%",
               display: "flex",
-              width: "26.6875rem",
-              flexDirection: "column",
-              height: "13.375rem",
-
-              overflowX: "hidden",
-
-              padding: 0,
-              marginTop: "4.175rem",
+              justifyContent: "center",
+              marginTop: "2.175rem",
             }}
           >
             <Card
               style={{
-                flexGrow: 1,
+                width: "100%",
                 borderRadius: "1.5rem",
-                backgroundColor: "#408FF7",
-                boxShadow:'none'
+                backgroundColor: "#fff",
+                boxShadow: "none",
+                display: "flex",
+                flexDirection: "row",
+                alignItems: "center",
+                justifyContent: "center",
+                position: "relative",
               }}
             >
-              <CardContent style={{ marginLeft: "3.6875rem", marginTop: "3.2875rem",padding:0 }}>
-                <Typography
-                  variant="h2"
+              <div style={{ flex: "1 1 33.33%", position: "relative" }}>
+                <img
+                  src="https://res.cloudinary.com/divr26z8e/image/upload/v1685680459/Your_vision_fla8yn.png"
+                  alt="Your Vision"
                   style={{
-                    color: "white",
-                    fontWeight: 800,marginBottom:'0.4rem',fontFamily:'Inter'
-                    
+                    width: "100%",
+                    height: "auto",
+                    objectFit: "cover",
+                    borderRadius: "1.5rem 1.5rem 0 0",
+                  }}
+                />
+                <CardContent
+                  style={{
+                    padding: "0.5rem",
+                    textAlign: "center",
+                    zIndex: "1",
+                    position: "absolute",
+                    bottom: "0",
+                    left: "0",
+                    width: "100%",
                   }}
                 >
-                  23.4K
-                </Typography>
-                <Typography
-                  variant="h5"
+                  <Typography
+                    variant="body1"
+                    style={{
+                      color: "black",
+                      fontFamily: "Inter",
+                      fontWeight: 500,
+                      maxWidth: "100%",
+                      lineHeight: "0",
+                      margin: "0 auto",
+                    }}
+                  >
+                    Your vision.
+                  </Typography>
+                </CardContent>
+              </div>
+              <div style={{ flex: "1 1 33.33%", position: "relative" }}>
+                <img
+                  src="https://res.cloudinary.com/divr26z8e/image/upload/v1685681069/Screenshot_2023-05-31_at_3.42.46_PM_g7h100.png"
+                  alt="Your Vision"
                   style={{
-                    color: "white",fontFamily:'Inter',fontWeight:400
-                    
-                   
+                    width: "100%",
+                    height: "auto",
+                    objectFit: "cover",
+                    borderRadius: "1.5rem 1.5rem 0 0",
+                  }}
+                />
+                <CardContent
+                  style={{
+                    padding: "0rem",
+                    textAlign: "center",
+                    zIndex: "1",
+                    position: "absolute",
+                    bottom: "0",
+                    left: "0",
+                    width: "100%",
                   }}
                 >
-                  projects funded
-                </Typography>
-              </CardContent>
+                  <Typography
+                    variant="body1"
+                    style={{
+                      color: "black",
+                      fontFamily: "Inter",
+                      fontWeight: 500,
+                      maxWidth: "100%",
+                      lineHeight: "0",
+                      margin: "0 auto",
+                    }}
+                  >
+                    Your community.
+                  </Typography>
+                </CardContent>
+              </div>
+              <div style={{ flex: "1 1 33.33%", position: "relative" }}>
+                <img
+                  src="https://res.cloudinary.com/divr26z8e/image/upload/v1685681069/Screenshot_2023-05-31_at_4.10.59_PM_niaopw.png"
+                  alt="Your Vision"
+                  style={{
+                    width: "100%",
+                    height: "auto",
+                    objectFit: "cover",
+                    borderRadius: "1.5rem 1.5rem 0 0",
+                  }}
+                />
+                <CardContent
+                  style={{
+                    padding: "0.5rem 0rem",
+                    textAlign: "center",
+                    zIndex: "1",
+                    position: "absolute",
+                    bottom: "0",
+                    left: "0",
+                    width: "100%",
+                  }}
+                >
+                  <Typography
+                    variant="body1"
+                    style={{
+                      color: "black",
+                      fontFamily: "Inter",
+                      fontWeight: 500,
+                      maxWidth: "100%",
+                      lineHeight: "1.5",
+                      margin: "0 auto",
+                    }}
+                  >
+                    Your idea brought to life.
+                  </Typography>
+                </CardContent>
+              </div>
+
+              {/* Repeat the same structure for the other two images and text */}
             </Card>
-          </Grid>
-          <Grid
-            item
-            container
-            direction="row"
-            style={{
-              width: "55.125rem",
-              display: "flex",
-              height: "13.375rem",
-              overflowX: "hidden",
-              padding: 0,
-              justifyContent: "space-between",
-              marginTop: "4.175rem",
-            }}
-          >
-            <Grid
-              item
-              style={{
-                width: "26.6875rem",
-                height: "100%",
-                overflowX: "hidden",
-              }}
-            >
-              <Card
-                style={{
-                  height: "100%",
-                  borderRadius: "1.5rem",
-                  backgroundColor: "#D2EC4C",
-                  boxShadow:'none'
-                }}
-              >
-                 <CardContent style={{ marginLeft: "3.6875rem", marginTop: "3.2875rem",padding:0 }}>
-                <Typography
-                  variant="h2"
-                  style={{
-                    color: "black",
-                    fontWeight: 800,marginBottom:'0.4rem',fontFamily:'Inter',color:'#292D32'
-                    
-                  }}
-                >
-                 $7.5M
-                </Typography>
-                <Typography
-                  variant="h5"
-                  style={{
-                    color: "black",fontFamily:'Inter',fontWeight:400,color:'#292D32'
-                    
-                   
-                  }}
-                >
-                  towards creative work
-                </Typography>
-              </CardContent>
-              </Card>
-            </Grid>
-            <Grid
-              item
-              style={{
-                width: "26.6875rem",
-                height: "100%",
-                overflowX: "hidden",
-              }}
-            >
-              <Card
-                style={{
-                  height: "100%",
-                  borderRadius: "1.5rem",
-                  backgroundColor: "#57BF43",
-                  boxShadow:'none'
-                }}
-              >
-                 <CardContent style={{ marginLeft: "3.6875rem", marginTop: "3.2875rem",padding:0 }}>
-                <Typography
-                  variant="h2"
-                  style={{
-                    color: "white",
-                    fontWeight: 800,marginBottom:'0.4rem',fontFamily:'Inter'
-                    
-                  }}
-                >
-                  85.5k
-                </Typography>
-                <Typography
-                  variant="h5"
-                  style={{
-                    color: "white",fontFamily:'Inter',fontWeight:400
-                    
-                   
-                  }}
-                >
-                  pledges
-                </Typography>
-              </CardContent>
-              </Card>
-            </Grid>
           </Grid>
 
           <div
@@ -352,9 +353,17 @@ function HomepageScreen2() {
                 marginRight: "2rem",
               }}
             >
-              <Typography variant="body1" style={{ fontWeight: 800,fontFamily:'Inter',marginTop:'.2rem' ,marginBottom:'.2rem'}}>
+              <Typography
+                variant="body1"
+                style={{
+                  fontWeight: 800,
+                  fontFamily: "Inter",
+                  marginTop: ".2rem",
+                  marginBottom: ".2rem",
+                }}
+              >
                 {" "}
-                Explore Ideas{" "}
+                Explore Projects{" "}
               </Typography>{" "}
               &nbsp;
               <EastIcon color="white;" />
@@ -365,14 +374,20 @@ function HomepageScreen2() {
               classes={{ root: classes.link }}
               href="#"
             >
-              <Typography variant="body1" style={{ fontWeight: 800,fontFamily:'Inter',color:'#292D32' }}>
+              <Typography
+                variant="body1"
+                style={{
+                  fontWeight: 800,
+                  fontFamily: "Inter",
+                  color: "#292D32",
+                }}
+              >
                 {" "}
-                <u>Propose an idea</u>
+                <u> Start a project</u>
               </Typography>
             </Button>
           </div>
         </Grid>
-       
       </ThemeProvider>
     </div>
   );
