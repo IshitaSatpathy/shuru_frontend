@@ -118,7 +118,7 @@ function Centerpage() {
             <HomepageScreen9 /></div>
             <div id="press">
             <HomepageScreen10 /></div>
-            <div id="subscribe">
+            <div id="contactus">
               <HomepageScreen11/>
             </div>
             

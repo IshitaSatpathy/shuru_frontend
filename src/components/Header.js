@@ -69,6 +69,7 @@ function Header() {
             <Logo />
           </Button>
           <div style={{ flex: 1 }} /> {/* Empty div for spacing */}
+          <a href="#contactus" style={{ textDecoration: "none" }}>
           <Button
             color="inherit"
             style={{
@@ -89,6 +90,7 @@ function Header() {
             &nbsp;
             <EastIcon style={{ color: "white" }} />
           </Button>
+          </a>
         </Toolbar>
       </AppBar>
     </ThemeProvider>

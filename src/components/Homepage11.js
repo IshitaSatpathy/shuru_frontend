@@ -1,17 +1,39 @@
-import React from "react";
-import { Grid, Typography, TextField, Button } from "@material-ui/core";
+import React,{useState} from "react";
+import {
+  AppBar,
+  Button,
+  Card,
+  CardContent,
+  Grid,
+  Hidden,
+  Toolbar,
+  Typography,
+  Avatar,
+  TextField,
+} from "@material-ui/core";
 import Header from "./Header";
 import Navbar from "./Navbar";
 import { IconButton } from "@mui/material";
 import { makeStyles } from "@mui/styles";
 import { blueGrey } from "@mui/material/colors";
-import EastIcon from "@mui/icons-material/East";
-import ChevronLeftIcon from "@mui/icons-material/ChevronLeft";
-import Bottomheaderscreen from "./bottomheader";
 import interRegular from '../static/Inter-Regular.ttf';
 import interBold from '../static/Inter-Bold.ttf';
 import interExtraBold from '../static/Inter-ExtraBold.ttf';
-import { createTheme, ThemeProvider } from "@material-ui/core/styles";
+import EastIcon from "@mui/icons-material/East";
+import whyshuru from "../whyshuru.png";
+import { styled } from "@mui/system";
+import { createMuiTheme, ThemeProvider } from "@material-ui/core/styles";
+import ThankYou from "./ThankYou";
+
+
+const StyledTextField = styled(TextField,{
+  name:"StyledTextField"
+})({
+  width:300,
+  "& .MuiInputBase-root":{
+    height:100
+  }
+})
 const useStyles = makeStyles((theme) => ({
   circle: {
     backgroundColor: blueGrey[50],
@@ -35,42 +57,13 @@ const useStyles = makeStyles((theme) => ({
     fontWeight: 'normal',
     fontStyle: 'normal',
   },
-  notchedOutline: {
-    borderColor: "#EDEEF1",
-  },
-  semicircleleft1: {
-    width: "13.575rem",
-    height: "10.5875rem",
-    borderTopRightRadius: "100% 100%",
-    backgroundColor: "#0124F1",
-    position: "relative",
-   
-  },
-  semicircleleft2: {
-    width:"13.575rem",
-    height: "10.5875rem",
-    borderBottomRightRadius: "100% 100%",
-    backgroundColor: "#0124F1",
-    position: "relative",
-    
-  },
-  semicircleright1: {
-    width: "13.575rem",
-    height: "10.5875rem",
-    borderTopLeftRadius: "100% 100%",
-    backgroundColor: "#0124F1",
-    position: "relative",
-    marginLeft:'3.77rem'
-    
-  },
-  semicircleright2: {
-    width: "13.575rem",
-    height: "10.5875rem",
-    borderBottomLeftRadius: "100% 100%",
-    backgroundColor: "#0124F1",
-    position: "relative",
-    marginLeft:'3.77rem'
-    
+  textField: {
+    "& .MuiOutlinedInput-root:hover .MuiOutlinedInput-input": {
+      backgroundColor: "#0022F2",
+    },
+    "& .MuiOutlinedInput-root.Mui-focused .MuiOutlinedInput-input": {
+      backgroundColor: "#0022F2",
+    },
   },
   circle1: {
     backgroundColor: blueGrey[50],
@@ -86,7 +79,10 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 function HomepageScreen11() {
-  const theme = createTheme({
+
+  const [isSubmitted, setIsSubmitted] = React.useState(false);
+
+  const theme = createMuiTheme({
     typography: {
       caption: {
         fontSize: "0.75rem",
@@ -115,143 +111,259 @@ function HomepageScreen11() {
   const classes = useStyles();
   return (
     <>
-     <ThemeProvider theme={theme}>
+    <ThemeProvider theme={theme}>
+    
       <Grid
-          container
-          spacing={1}
-          style={{
-            justifyContent: "space-between",
+        container
+        spacing={1}
+        style={{
+          justifyContent: "space-between",
             alignItems: "center",
             margin: "auto",
             position: "relative",
-            maxWidth: "100%",
-          }}
-        >
+            maxWidth: "83.75rem",
+        }}
+      >
         <Grid
-          container
+          item
           style={{
-            width: "100%",
-            flex: "display",
-            flexDirection: "row",
-            justifyContent:'space-between'
+            maxWidth: "100%",
+              
+              padding: 0,
+             
+              marginBottom: 0,
+              marginTop:"6.25rem"
           }}
         >
           <Grid
             item
-            style={{ width: "17.375rem", marginTop: "13.9125rem" }}
+            style={{ position: "relative" }}
           >
-            <div className={classes.semicircleleft1}></div>
-            <div className={classes.semicircleleft2}></div>
+            <Typography variant="caption" style={{fontFamily:'Inter',fontWeight:500}}>CONTACT US</Typography>
           </Grid>
           <Grid
-            container
-            spacing={1}
-            style={{
-              
-              position: "relative",
-              width: "43.472%",marginTop:"12.325rem"
-            }}
+              container
+              justifyContent="space-between"
+              alignItems="center"
+              style={{ marginBottom: "0rem", width: "83.75rem" }}
+            >
+            <Grid item style={{ maxWidth: "39.375rem" }}>
+            <Typography variant="h1"  style={{ fontFamily:'Inter',fontWeight:800,color:'#292D32' }}>
+                Contact us
+              </Typography>
+            </Grid>
+          </Grid>
+        </Grid>
+    
+        <Grid
+          item
+          style={{
+            marginTop:"3.125rem",
+            maxWidth: "83.75rem",
+            overflowX: "hidden",
+            height:'37.125rem',
+            padding:0,
+            marginBottom:'3.937rem'
+          }}
+        >
+          {isSubmitted ? (<ThankYou/>) : (
+          <Card
+            style={{  borderRadius: "1.5rem", display: "flex",height:"80%",width:"83rem",boxShadow:'none',backgroundColor:'#FFFFFF' }}
           >
-            <Grid
-              item
-              style={{
-                width: "100%",
-                
-               padding:0,
 
-                marginBottom: 0,
+            <Grid
+              container
+              style={{
+                display: "flex",
+                justifyContent: "space-around",
+                alignItems: "center",
+                height: "100%",
               }}
             >
               <Grid
-                container
-                justifyContent="space-between"
-                alignItems="center"
-                style={{ marginBottom: "0rem" }}
+                item
+                xs={12}
+                sm={6}
+                style={{
+                  display: "flex",
+                  justifyContent: "center",
+                  alignItems: "center",
+                }}
               >
-                <Grid
-                  item
-                  style={{
-                   
-                    width: "100%",
-                   
-                  }}
-                >
-                  <Typography
-                    variant="h1"
+                <CardContent>
+                  <div
                     style={{
-                   
-                      fontWeight:800,
-                      fontFamily:'Inter',
-                      textAlign: "center",
+                      display: "flex",
+                      flexDirection: "column",
+                      width: "450px",
+                      justifyContent: "space-between",
+                      paddingLeft: "10px",
                     }}
                   >
-                    Subscribe our notification, news & blogs
-                  </Typography>
-                </Grid>
-                <Grid
-                  container
-                  
-                  alignItems="center"
-                  style={{
-                   marginTop:'4.375rem',
-                    display: "flex",
-                    flexDirection: "column",
-                  }}
-                >
-                  <Grid item style={{ width: "29rem",  }}>
+                    <div style={{ marginBottom: "15px" }}>
+                      <Typography component="div" style={{ fontSize: "18px", marginBottom:"5px", marginLeft:"5px"}}>
+                        First Name:
+                      </Typography>
+                      <TextField
+                        className={classes.textField}
+                        id="outlined-basic"
+                        variant="outlined"
+                        style={{ width: "100%", backgroundColor:blueGrey[50],borderRadius:"10px" }}
+                        InputProps={{
+                          style: {
+                            borderRadius: "10px",
+                          },
+                        }}
+                      />
+                    </div>
+
+                    <div style={{ marginBottom: "15px" }}>
+                      <Typography style={{ fontSize: "18px", marginBottom:"5px" , marginLeft:"5px"}} component="div">
+                        Last Name:
+                      </Typography>
+                      <TextField
+                        id="outlined-basic"
+                        variant="outlined"
+                        style={{ width: "100%", backgroundColor:blueGrey[50],borderRadius:"10px" }}
+                        InputProps={{
+                          style: {
+                            borderRadius: "10px",
+                          },
+                        }}
+                      />
+                    </div>
+                    <div>
+                      <Typography style={{ fontSize: "18px" , marginBottom:"5px",marginLeft:"5px"}} component="div">
+                        Email:
+                      </Typography>
+                      <TextField
+                        id="outlined-basic"
+                        variant="outlined"
+                        style={{ width: "100%", backgroundColor:blueGrey[50],borderRadius:"10px"}}
+                        InputProps={{
+                          style: {
+                            borderRadius: "10px",
+                          },
+                        }}
+                      />
+                    </div>
+                  </div>
+                </CardContent>
+              </Grid>
+              <Grid
+                item
+                xs={12}
+                sm={6}
+                style={{
+                  display: "flex",
+                }}
+              >
+                <CardContent style={{ paddingBottom: "0" }}>
+                  <div
+                    style={{
+                      display: "flex",
+                      flexDirection: "column",
+                      width: "470px",
+                      justifyContent: "space-between",
+                      marginTop:"20px"
+                    }}
+                  >
+                    <Typography style={{ fontSize: "18px", marginBottom:"5px" }} component="div">
+                      Your Message :
+                    </Typography>
                     <TextField
-                      id="email"
-                      name="email"
-                      label="Enter your email"
+                      id="outlined-basic"
                       variant="outlined"
-                      fullWidth
-                      required
-                      InputProps={{
-                        style: {
-                          backgroundColor: "white",
-                          borderRadius: ".75rem",
-                          borderColor: "#EDEEF1",
-                          outline: "none",
-                        },
+                      multiline
+                      rows={14}
+                      style={{
+                        backgroundColor:blueGrey[50]
                       }}
                     />
-                  </Grid>
-                  <Grid
-                    item
+                  </div>
+                  <Button
+                    variant="contained"
+                    onClick={() => setIsSubmitted(true)}
                     style={{
-                      width: "29rem",
-                      
-                      marginTop: "2.5rem",
-                      marginBottom:'10rem'
+                      backgroundColor: "#D3E938",
+                      color: "white",
+                      borderRadius: "5px",
+                      float: "right",
+                      width:"120px",
+                      marginTop: "10px",
+                      boxShadow:"none"
                     }}
                   >
-                    <Button
-                      type="submit"
-                      variant="contained"
-                     
-                      style={{
-                        backgroundColor: "#292D32",
-                        width:"100%",
-                       
-                        borderRadius: ".75rem",
-                      }}
-                    ><Typography variant="body1" style={{fontFamily:'Inter',fontWeight:800,color:'white',padding:'.3rem'}}>
-                      Submit</Typography>
-                    </Button>
-                  </Grid>
-                </Grid>
+                    Submit
+                  </Button>
+                </CardContent>
               </Grid>
             </Grid>
-          </Grid>
-          <Grid
-            item
-            style={{ width: "17.375rem", marginTop: "13.9125rem", }}
-          >
-            <div className={classes.semicircleright1}></div>
-            <div className={classes.semicircleright2}></div>
-          </Grid>
+            {/*<div style={{display:"flex"}}>
+                  <div
+                    style={{
+                      width: "40rem",
+                      height: "100%",
+                      overflow: "hidden",
+                      marginLeft:"2rem",
+                      paddingBottom:"0px",
+                      display:"flex",
+                      flexDirection:"column",
+                      justifyContent:"center",
+                      alignItems:"left",
+                      borderRadius: "1.5rem",
+                    }}
+                  >
+
+                            <div style={{marginLeft:"2rem",width:"35rem",display:"flex",flexDirection:"column",marginTop:"-30px"}}>
+                              <Typography variant="body">
+                                First Name:
+                              </Typography>
+                              <TextField id="outlined-basic" label="" variant="outlined" fullWidth="true" margin="normal" style={{backgroundColor:blueGrey[50]}}/>
+                            </div>
+
+                            <div style={{marginLeft:"2rem",width:"35rem",display:"flex",flexDirection:"column"}}>
+                              <Typography variant="body">
+                                First Name:
+                              </Typography>
+                              <TextField id="outlined-basic" label="" variant="outlined" fullWidth="true" margin="normal" style={{backgroundColor:blueGrey[50]}}/>
+                            </div>
+
+                            <div style={{marginLeft:"2rem",width:"35rem",display:"flex",flexDirection:"column"}}>
+                              <Typography variant="body">
+                                First Name:
+                              </Typography>
+                              <TextField id="outlined-basic" label="" variant="outlined" fullWidth="true" margin="normal" style={{backgroundColor:blueGrey[50]}}/>
+                            </div>
+                  </div>
+
+                  <div style={{padding:"0px",marginTop:"10px",width:"36rem",height:"20rem",display:"flex",flexDirection:"column",justifyContent:"space-between"}}>
+                  
+                      <div style={{width:"100%"}}>
+                        <Typography variant="body1" style={{fontWeight:500,marginBottom:"10px",marginTop:"10px"}}>
+                          Your Message:
+                        </Typography>
+                        <TextField rows={15} multiline id="outlined-basic" label="" variant="outlined" fullWidth style={{marginRight:"10px",backgroundColor:blueGrey[50]}}>
+                        </TextField>
+                      </div>
+            
+
+                      <div style={{
+                        display:"flex",
+                        justifyContent:"flex-end",
+                      }}>
+                        <Button style={{marginTop:"10px",width:"10rem",backgroundColor:"#D3E938"}}>
+                          Hello
+                        </Button>
+                      </div>
+                  </div>
+
+                    </div>*/}
+          </Card>
+          )}
         </Grid>
       </Grid>
+      
       </ThemeProvider>
     </>
   );
