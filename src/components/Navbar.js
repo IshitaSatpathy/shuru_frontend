@@ -266,7 +266,7 @@ function Navbar() {
                     }}
                   >
                     {" "}
-                    Press
+                    Explore
                   </Typography>
                 </Button>
               </a>

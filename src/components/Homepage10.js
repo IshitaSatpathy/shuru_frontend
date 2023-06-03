@@ -32,6 +32,11 @@ const useStyles = makeStyles((theme) => ({
     alignItems: "center",
     position: "relative",
   },
+  box:{
+    display:"flex",
+    flexDirection:"row",
+    
+  },
   "@font-face": {
     fontFamily: "Inter",
     src: `
@@ -110,10 +115,10 @@ function HomepageScreen10() {
           >
             <Grid item style={{ position: "relative" }}>
               <Typography
-                variant="caption"
-                style={{ fontFamily: "Inter", fontWeight: 500 }}
+                variant="body"
+                style={{ fontFamily: "Inter", fontWeight: 400 }}
               >
-                PRESS
+                Explore
               </Typography>
             </Grid>
             <Grid
@@ -131,11 +136,14 @@ function HomepageScreen10() {
                     color: "#292D32",
                   }}
                 >
-                  Hot of the press
+                  Your bank of ideas.
                 </Typography>
               </Grid>
             </Grid>
           </Grid>
+          
+          
+          
           <Grid
             container
             style={{

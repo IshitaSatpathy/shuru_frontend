@@ -201,7 +201,7 @@ props.setst(1)
                     color:"#292D32"
                   }}
                 >
-                  Investor
+                  Investors
                 </Typography></div>
 
                 <Divider
@@ -444,7 +444,7 @@ props.setst(1)
                     color:"#292D32"
                   }}
                 >
-                  Investor
+                  Investors
                 </Typography>
 
                 <Divider
