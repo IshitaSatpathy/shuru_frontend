@@ -93,7 +93,7 @@ function Navbar() {
               justifyContent: "left",
             }}
             classes={{ root: classes.link }}
-            href="#"
+            href="#contactus"
           >
             <Typography
               variant="body1"

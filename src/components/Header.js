@@ -69,7 +69,7 @@ function Header() {
             <Logo />
           </Button>
           <div style={{ flex: 1 }} /> {/* Empty div for spacing */}
-          <a href="#contactus" style={{ textDecoration: "none" }}>
+          <a href="#subscribe" style={{ textDecoration: "none" }}>
           <Button
             color="inherit"
             style={{

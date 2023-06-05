@@ -24,6 +24,7 @@ import HomepageScreen9 from './Homepage9';
 import HomepageScreen10 from './Homepage10';
 import HomepageScreen11 from './Homepage11';
 import HomepageScreen13 from "./Homepage13";
+import Subscribe from './subscribe';
 import { useState } from "react";
 import Header from "./Header";
 import Navbar from "./Navbar";
@@ -120,6 +121,9 @@ function Centerpage() {
             <HomepageScreen10 /></div>
             <div id="contactus">
               <HomepageScreen11/>
+            </div>
+            <div id="subscribe">
+              <Subscribe/>
             </div>
             
         <Navbar/>   

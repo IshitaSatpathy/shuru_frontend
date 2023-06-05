@@ -11,6 +11,12 @@ import {
   Avatar,
   Box,
 } from "@material-ui/core";
+import badal1 from "../images/badal1.png";
+import badal2 from "../images/badal2.png";
+import badal3 from "../images/badal3.png";
+import badal4 from "../images/badal4.png";
+import badal5 from "../images/badal5.png";
+import badal6 from "../images/badal6.png";
 import Header from "./Header";
 import Navbar from "./Navbar";
 import { IconButton } from "@mui/material";
@@ -142,9 +148,56 @@ function HomepageScreen10() {
             </Grid>
           </Grid>
           
-          
-          
-          <Grid
+          <Grid container spacing={{ xs: 2, md: 3 }} columns={{ xs: 4, sm: 8, md: 12 }}>
+              <Grid item xs={2} sm={4} md={4}>
+                <img src={badal6} style={{width:"26rem",height:"15rem", display:"flex",position:"relative",left:"3.75rem",top:"1.875rem"}}/>
+                <Typography variant="body1" style={{display:"flex", position:"relative", bottom:"7.5rem", maxWidth:"20rem", left:"7rem", color:"white"}}>
+                  Pollinate, a startup using tiny insect-bots that replicate natural pollination patterns .
+                </Typography>
+              </Grid>
+
+              <Grid item xs={2} sm={4} md={4}>
+                <img src={badal1} style={{width:"22rem",height:"15rem", display:"flex", position:"relative",bottom:"3rem",left:"6rem"}}/>
+                <Typography variant="body1" style={{display:"flex", position:"relative", bottom:"12rem", maxWidth:"15rem", left:"11rem", color:"white"}}>
+                ALina îs an AI designer who offers advice and ideas sustainable practices.
+                </Typography>
+              </Grid>
+
+              <Grid item xs={2} sm={4} md={4}>
+                <img src={badal5} style={{width:"23rem",height:"15rem",diplay:"flex",position:"relative",left:"0.938rem",top:"4rem"}}/>
+                <Typography variant="body1" style={{display:"flex", position:"relative", bottom:"6rem", maxWidth:"10rem", left:"7.5rem", color:"white"}}>
+                An AI trained on the U.S. Constitution of rights. What’s your AI.
+                </Typography>
+              </Grid>
+
+              <Grid item xs={2} sm={4} md={4}>
+                <img src={badal4} style={{width:"26rem",height:"15rem", display:"flex", position:"relative",top:"2rem",left:"3rem"}}/>
+                <Typography variant="body1" style={{display:"flex", position:"relative", bottom:"8.25rem", maxWidth:"15rem", left:"9.5rem"}}>
+                Solein, a protein-rich food spun out of thin air using a fermentation process.
+                </Typography>
+              </Grid>
+
+              <Grid item xs={3} sm={4} md={4}>
+                <img src={badal2} style={{width:"28rem",height:"20rem", display:"flex", position:"relative",bottom:"8rem",left:"0.5rem"}}/>
+
+                <Typography variant="body1" style={{display:"flex", position:"relative", bottom:"20rem", maxWidth:"20rem", left:"6rem",color:"white"}}>
+                Worldcoin, a global currency for income.
+                </Typography>
+              </Grid>
+              
+              <Grid item xs={1} sm={4} md={4}>
+                <img src={badal3} style={{width:"30rem",height:"15rem", display:"flex", position:"relative", top:"1rem", right:"0.5rem"}}/>
+
+                <Typography variant="body1" style={{display:"flex", position:"relative", bottom:"7rem", maxWidth:"12rem", left:"8rem",color:"black"}}>
+                “Sports League” Don’t bet, make an investment, A stock market, for sports.
+                </Typography>
+              </Grid>
+          </Grid>
+
+
+
+
+          {/*<Grid
             container
             style={{
               display: "flex",
@@ -356,7 +409,7 @@ function HomepageScreen10() {
                 </CardContent>
               </Card>
             </Grid>
-          </Grid>
+          </Grid>*/}
         </Grid>
   
       </ThemeProvider>

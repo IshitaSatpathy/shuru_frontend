@@ -12,6 +12,7 @@ import HomepageScreen10 from './components/Homepage10';
 import HomepageScreen11 from './components/Homepage11';
 import HomepageScreen12 from './components/Homepage12';
 import ProjectScreen2 from './components/Project2';
+import Subscribe from './components/subscribe';
 import HomepageScreen13 from './components/Homepage13';
 import Centerpage from './components/Centerpage';
 import { useEffect } from 'react';
@@ -93,8 +94,10 @@ function App() {
       <Route path="/homepage10" component={HomepageScreen10} />
       <Route path="/homepage11" component={HomepageScreen11} />
       <Route path="/homepage12" component={HomepageScreen12} />
+      <Route path="/subscribe" component={Subscribe} />
       <Route path="/project2" component={ProjectScreen2} />
       
+
     </Switch>
   </Router>
   );
